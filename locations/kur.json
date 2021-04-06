@@ -18,9 +18,7 @@
         "vgravmap": "Note12",
         "access_rules": [
           "$canTeleport1,$canDroneTeleport,$canEnhancedDroneLaunch",
-          // "$canTeleport2,$canDroneTeleport,$canEnhancedDroneLaunch",  // Redundant
-          // "$canTeleport3,$canDroneTeleport,$canEnhancedDroneLaunch",  // Redundant
-          "[progadvanced],$canTeleport1,$canDroneTeleport,telereset",    // What's Telereset?
+          "[progadvanced],$canTeleport1,$canDroneTeleport,telereset",
           "[progadvanced],$canTeleport1,$canDroneTeleport,grapple",
           "[progadvanced],laserdrill,highjump,grapple,$canTeleport2",
           "[progadvanced],grapple,$canTeleport3",
@@ -58,12 +56,11 @@
         "access_rules": [
           "laserdrill,highjump,$canTeleport1,$canGlitchGun2,grapple",
           "laserdrill,$canGlitchGun2,grapple,$canTeleport2",
-          // "laserdrill,$canGlitchGun2,grapple,$canTeleport3", // Redundant
           "$canTeleport1,$canDroneTeleport,$canEnhancedDroneLaunch",
 
           // FIXME: VGR Needs
           "$canDroneTeleport,grapple,addressdisruptor2",
-          "highjump,grapple,addressdisruptor2",  // Likely Redundant due to Area Access
+          "highjump,grapple,addressdisruptor2",  // There's an access rule for Kur requiring AD2?
           "$canAirport3,highjump,addressdisruptor2"
         ],
         "map_locations": [
@@ -97,8 +94,8 @@
           "$canTeleport3",
 
           // FIXME: VGR Needs
-          "$canAirport2,$canUseRemoteDrone",	// Likely Redundant due to Area Access
-          "$canAirport2,grapple",							// Likely Redundant due to Area Access
+          "$canAirport2,$canUseRemoteDrone",	// Check access via Indi
+          "$canAirport2,grapple",							// ^^^
           "$canTeleport1,addressdisruptor2,$canDroneTeleport",
           "$canTeleport1,addressdisruptor2,highjump,$canUseRemoteDrone"
         ],
@@ -129,7 +126,6 @@
         "access_rules": [
           "laserdrill,highjump,$canTeleport1,$canGlitchGun2,grapple",
           "laserdrill,$canGlitchGun2,grapple,$canTeleport2",
-          // "laserdrill,$canGlitchGun2,grapple,$canTeleport3",  // Redundant
           "$canTeleport1,$canDroneTeleport,$canEnhancedDroneLaunch",
           "[progadvanced],$canGlitchGun1,$canTeleport1,$canDroneTeleport",
           "[progadvanced],laserdrill,$canTeleport1,$canDroneTeleport",
@@ -170,7 +166,6 @@
         "access_rules": [
           "$canGlitchGun1,highjump,$canTeleport1,$canUseRemoteDrone,grapple",
           "$canUseRemoteDrone,grapple,$canTeleport2",
-          // "$canUseRemoteDrone,grapple,$canTeleport3",  // Redundant
           "$canTeleport1,$canDroneTeleport",
           "[progadvanced],highjump,$canTeleport1,$canUseRemoteDrone,grapple",
           "[progadvanced],$canGlitchGun1,$canTeleport1,$canDroneTeleport",
@@ -209,7 +204,6 @@
         "access_rules": [
           "laserdrill,highjump,$canTeleport1,$canGlitchGun2,grapple",
           "laserdrill,$canGlitchGun2,grapple,$canTeleport2",
-          // "laserdrill,$canGlitchGun2,grapple,$canTeleport3",  // Redundant
           "$canTeleport1,$canDroneTeleport,$canEnhancedDroneLaunch",
           "[progadvanced],$canDroneTeleport,$canTeleport2",
           "[progmasochist],$canDroneTeleport,grapple",
@@ -576,7 +570,6 @@
           "wave,$canGlitchGun1,$canUseRemoteDrone",
           "$canGlitchGun1,$canTeleport1,$canUseRemoteDrone",
           "$canUseRemoteDrone,$canTeleport2",
-          // "$canUseRemoteDrone,$canTeleport3", // Redundant
           "[progadvanced],$canUseRemoteDrone,grapple",
           "[progadvanced],$canDroneTeleport",
 
@@ -612,16 +605,16 @@
           "laserdrill,wave,$canGlitchGun1,highjump",
           "$canGlitchGun1,$canTeleport1,$canUseRemoteDrone",
           "laserdrill,$canGlitchGun1,highjump,$canTeleport1",
-          "laserdrill,$canTeleport2",                          // Likely Redundant due to Area Access
+          //"laserdrill,$canTeleport2",                          //Redundant
           "$canTeleport3",
           "[progadvanced],laserdrill,grapple",
           "[progadvanced],$canDroneTeleport",
           "[progmasochist],grapple",
 
           // FIXME: VGR Needs
-          "$canAirport2",				// Likely Redundant due to Area Access
-          "highjump",						// Likely Redundant due to Area Access
-          "$canUseRemoteDrone"	// Likely Redundant due to Area Access
+          //"$canAirport2",				// Redundant because of above line
+          "highjump",						// Area access doesn't require HJ
+          "$canUseRemoteDrone"	// Area access doesn't require RD
         ],
         "map_locations": [
           {
@@ -657,7 +650,7 @@
           "[progadvanced],$canTeleport1,$canDroneTeleport",
 
           // FIXME: VGR Needs
-          "$canTeleport1,$canUseRemoteDrone",  // Likely Redundant due to Area Access
+          "$canTeleport1,$canUseRemoteDrone",  // Area access does not require this combination
           "$canTeleport2,highjump"
         ],
         "map_locations": [
@@ -687,7 +680,6 @@
         "access_rules": [
           "laserdrill,wave,$canGlitchGun1",
           "laserdrill,$canGlitchGun1,$canTeleport1",
-          // "laserdrill,$canGlitchGun1,$canTeleport2",  // Redundant
           "$canTeleport3",
           "[progadvanced],laserdrill,grapple",
           "[progadvanced],laserdrill,$canTeleport2",
@@ -727,7 +719,7 @@
           "[progadvanced],$canGlitchGun1,$canTeleport1,$canUseRemoteDrone,grapple",
 
           // FIXME: VGR Needs
-          "$canTeleport2,fatbeam", // Likely Redundant due to Area Access
+          "$canTeleport2,fatbeam", // Area access does not require FB, but can be used to obtain item from reverse entrance
           "$canTeleport1,highjump,$canDroneTeleport,addressdisruptor",
           "$canTeleport3,addressdisruptor"
         ],

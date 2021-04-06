@@ -281,7 +281,6 @@
         "access_rules": [
           "laserdrill,wave,$canGlitchGun1",
           "laserdrill,$canGlitchGun1,$canTeleport1",
-          "laserdrill,$canGlitchGun1,coat2", // FIXME: Redundant
           "$canTeleport3",
           "[progmasochist],$canGlitchGun1,grapple",
 
@@ -351,8 +350,8 @@
           "[progmasochist],grapple",
 
           // FIXME: VGR Needs
-          "$canTeleport2",			// Likely Redundant due to Area Access
-          "wave,$canGlitchGun1"	// Likely Redundant due to Area Access
+          "$canTeleport2",			// alternative to having wave, bypasses needing AD1
+          "wave,$canGlitchGun1"	// Check with VGR?
         ],
         "map_locations": [
           {
@@ -449,8 +448,8 @@
           "[progmasochist],laserdrill,grapple",
 
           // FIXME: VGR Needs
-          "$canTeleport2",			// Likely Redundant due to Area Access
-          "wave,$canGlitchGun1"	// Likely Redundant due to Area Access
+          "$canTeleport2",			// This item requires block breaking
+          "wave,$canGlitchGun1"	// Check with VGR?
         ],
         "map_locations": [
           {
@@ -511,8 +510,8 @@
         "short_name": "Size Node (Absu)",
         "vgravmap": "SizeNode2",
         "access_rules": [
-          "laserdrill,wave,$canGlitchGun1",
-          "laserdrill,$canGlitchGun1,$canTeleport1",
+          "wave,$canGlitchGun1",
+          "$canGlitchGun1,$canTeleport1",
           "laserdrill,$canTeleport2",
           "coat3",
           "[progadvanced],$canDroneTeleport",
@@ -520,8 +519,8 @@
           "[progmasochist],$canGlitchGun1,grapple",
 
           // FIXME: VGR Needs
-          "$canTeleport2",			// Likely Redundant due to Area Access
-          "wave,$canGlitchGun1"	// Likely Redundant due to Area Access
+          "$canTeleport2",			// Check with VGR?
+          //"wave,$canGlitchGun1"	// This one is redundant. Removed drill requirement from others, as you only need AD or Drill
         ],
         "map_locations": [
           {
@@ -558,9 +557,9 @@
           "[progmasochist],laserdrill,grapple",
 
           // FIXME: VGR Needs
-          "$canTeleport2",				// Likely Redundant due to Area Access
-          "wave,$canGlitchGun1",	// Likely Redundant due to Area Access
-          "$canTeleport1,$canGlitchGun1"
+          "$canTeleport2",				// Requires drill - Check with VGR?
+          "wave,$canGlitchGun1",	// Requires drill - Check with VGR?
+          "$canTeleport1,$canGlitchGun1" // Requires drill - Check with VGR?
         ],
         "map_locations": [
           {
@@ -616,7 +615,6 @@
         "access_rules": [
           "$canTeleport1,$canUseRemoteDrone,$canGlitchGun2",
           "$canUseRemoteDrone,$canGlitchGun2,$canTeleport2",
-//          "$canUseRemoteDrone,$canGlitchGun2,coat3", // Redundant
           "highjump,$canGlitchGun2,coat3",
           "[progadvanced],$canGlitchGun2,grapple,coat3",
           "[progadvanced],laserdrill,$canGlitchGun2,grapple,coat2",
@@ -664,7 +662,7 @@
           "[progmasochist],laserdrill,grapple",
 
           // FIXME: VGR Needs
-          "wave,$canGlitchGun1",  // Likely Redundant due to Area Access
+          "wave,$canGlitchGun1",  // should be correct
           "$canTeleport2,highjump",
           "$canGlitchBomb",
           "highjump,grapple"
@@ -708,7 +706,7 @@
 
           // FIXME: VGR Needs
           "$canTeleport1,$canGlitchGun1,$canUseRemoteDrone",  // FIXME: I just needed teleport1 & highjump?
-          "$canAirport2"                                        // Likely Redundant due to Area Access
+          "$canAirport2"                                        // would also need Indi access to be redundant
         ],
         "map_locations": [
           {
@@ -783,9 +781,9 @@
           "[progmasochist],laserdrill,grapple",
 
           // FIXME: VGR Needs
-          "wave,$canGlitchGun1",					// Likely Redundant due to Area Access
-          "$canTeleport1,$canGlitchGun1",	// Likely Redundant due to Area Access
-          "$canTeleport2"									// Likely Redundant due to Area Access
+          "wave,$canGlitchGun1",					// these also need drill
+          "$canTeleport1,$canGlitchGun1",	// Check with
+          "$canTeleport2"									// VGR?
         ],
         "map_locations": [
           {
@@ -820,7 +818,7 @@
           "[progmasochist],grapple",
 
           // FIXME: VGR Needs
-          "$canTeleport2,highjump",          // Likely Redundant due to Area Access
+          //"$canTeleport2,highjump",          // Redundant due to first listed logic
           "$canTeleport2,grapple",
           "$canTeleport2,$canDroneTeleport"
         ],
@@ -855,7 +853,7 @@
           "[progmasochist],grapple",
 
           // FIXME: VGR Needs
-          "$canTeleport1"  // Likely Redundant due to Area Access
+          //"$canTeleport1"  // Redundant
         ],
         "map_locations": [
           {

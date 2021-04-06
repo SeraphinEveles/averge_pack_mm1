@@ -14,15 +14,11 @@
         "short_name": "Turbine Pulse",
         "vgravmap": "TriCone",
         "access_rules": [
-          "$canTeleport1,$canDroneTeleport,$canEnhancedDroneLaunch,telereset",    // What's telereset?
-          // "$canDroneTeleport,$canTeleport2,$canEnhancedDroneLaunch,telereset",  // Redundant
-          // "$canDroneTeleport,$canEnhancedDroneLaunch,$canTeleport3,telereset",  // Redundant
+          "$canTeleport1,$canDroneTeleport,$canEnhancedDroneLaunch,telereset",
           "[progmasochist],laserdrill,grapple",
 
-          // FIXME: Are these supposed to be combined?
-          "$canAirport3",
-          "$canEnhancedDroneLaunch",
-          "$canDroneTeleport"
+          // FIXME: Are these supposed to be combined? - Yes
+          "$canAirport3,$canEnhancedDroneLaunch,$canDroneTeleport"
         ],
         "map_locations": [
           {
@@ -150,7 +146,6 @@
         "vgravmap": "HealthNode5",
         "access_rules": [
           "laserdrill,highjump,$canTeleport1,$canGlitchGun2",
-          // "laserdrill,highjump,$canGlitchGun2,$canTeleport2", // Redundant
           "laserdrill,$canGlitchGun2,grapple,$canTeleport2",
           "$canTeleport3",
           "[progadvanced],laserdrill,$canGlitchGun2,$canTeleport2",
@@ -220,15 +215,15 @@
         "short_name": "Power Node Fragment (Ukkin-Na =)",
         "vgravmap": "PowerNodeFragment15",
         "access_rules": [
-          "laserdrill,highjump,$canTeleport2",
+          //"laserdrill,highjump,$canTeleport2" //Redundant due to area access
           "$canAirport2,$canDroneTeleport",
           "laserdrill,grapple,$canTeleport2",
-          "$canTeleport3",
+          // "$canTeleport3" //Redundant due to area access
           "[progadvanced],laserdrill,$canTeleport2",
-          "[progmasochist],grapple",
+          "[progmasochist],grapple"
 
           // FIXME: VGR Needs
-          "$canAirport2,highjump"  // Likely Redundant due to Area Access
+          //"$canAirport2,highjump"  //Redundant
         ],
         "map_locations": [
           {

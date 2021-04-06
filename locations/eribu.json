@@ -19,7 +19,6 @@
           "$canAirport2,$canGlitchBomb",
           "highjump,$canUseRemoteDrone,$canGlitchBomb",
           "$canGlitchBomb,$canDroneTeleport"
-//          "$canAirport3,$canGlitchBomb" // FIXME: Redundant
         ],
         "map_locations": [
           {
@@ -189,7 +188,6 @@
           "$canUseRemoteDrone",
           "grapple",
           "$canAirport2",
-          "$canAirport3", // FIXME: Redundant
 
           // FIXME: VGR Needs
           "wave",
@@ -254,7 +252,7 @@
           "$canShootShort,$canUseRemoteDrone",
           "laserdrill,$canTeleport2",
           "$canTeleport3",
-          "[progadvanced],highjump,coat3", // FIXME: Wut?
+          "[progadvanced],highjump,coat3",
           "[progmasochist],coat3",
 
           // FIXME: VGR Needs
@@ -454,13 +452,12 @@
           "laserdrill,$canGlitchGun1",
           "$canUseRemoteDrone",
           "laserdrill,coat2",
-          "coat3",
+          "$canAirport2",				// doesn't need coat3
           "[progmasochist],grapple",
 
           // FIXME: VGR Needs
-          "$canAirport2",				// FIXME: Likely Redundant due to Area Access
-          "$canGlitchBomb",			// FIXME: Likely Redundant due to Area Access
-          "grapple,laserdrill"	// FIXME: Likely Redundant due to Area Access
+          "$canGlitchBomb,excavate",			// This is correct, but also requires excavate to get to the room
+          "grapple,laserdrill"	// This is also correct
         ],
         "map_locations": [
           {

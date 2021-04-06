@@ -23,7 +23,7 @@
           "[progmasochist],grapple,$canTeleport2",
 
           // FIXME: VGR Needs
-          "$canAirport2"  // Likely Redundant due to Area Access
+          //"$canAirport2"  // Redundant
         ],
         "map_locations": [
           {
@@ -53,7 +53,6 @@
         "access_rules": [
           "laserdrill,$canGlitchGun2,grapple",
           "laserdrill,$canGlitchGun2,$canTeleport2",
-          // "laserdrill,$canGlitchGun2,$canTeleport3", // Redundant
           "$canDroneTeleport,$canGlitchGun2",
 
           // FIXME: VGR Needs

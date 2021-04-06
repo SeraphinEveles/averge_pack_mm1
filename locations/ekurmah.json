@@ -51,9 +51,7 @@
         "vgravmap": "BreachSuppressor",
         "access_rules": [
           "$canTeleport2,$canDroneTeleport,$canEnhancedDroneLaunch",
-          // "$canDroneTeleport,$canEnhancedDroneLaunch,$canTeleport3", // Redundant
           "[progadvanced],$canTeleport2,$canDroneTeleport,telereset",
-          // "[progadvanced],$canDroneTeleport,$canTeleport3,telereset", // Redundant
 
           // FIXME: VGR Needs
           "$canTeleport2,$canDroneTeleport,grapple,highjump,$canEnhancedDroneLaunch",
@@ -85,9 +83,7 @@
         "vgravmap": "Note3",
         "access_rules": [
           "$canTeleport2,$canDroneTeleport,$canEnhancedDroneLaunch",
-          // "$canDroneTeleport,$canEnhancedDroneLaunch,$canTeleport3", // Redundant
           "[progadvanced],$canTeleport2,$canDroneTeleport,telereset",
-          // "[progadvanced],$canDroneTeleport,$canTeleport3,telereset", // Redundant
 
           // FIXME: VGR Needs
           "$canTeleport2,$canDroneTeleport,grapple,highjump,$canEnhancedDroneLaunch,",
@@ -119,7 +115,6 @@
         "vgravmap": "Note1",
         "access_rules": [
           "$canTeleport2,$canDroneTeleport,$canEnhancedDroneLaunch",
-          // "$canDroneTeleport,$canEnhancedDroneLaunch,$canTeleport3", // Redundant
           "[progadvanced],highjump,grapple,$canAirport3",
           "[progmasochist],grapple,$canTeleport3",
 
@@ -189,7 +184,6 @@
         "vgravmap": "Swim",
         "access_rules": [
           "$canTeleport2,$canDroneTeleport,$canEnhancedDroneLaunch,passcodetool",
-          // "$canDroneTeleport,$canEnhancedDroneLaunch,$canTeleport3,passcodetool", // Redundant
           "[progadvanced],highjump,$canTeleport2,$canDroneTeleport,passcodetool",
           "[progadvanced],$canDroneTeleport,$canTeleport3,passcodetool",
           "[progadvanced],highjump,grapple,$canTeleport3,passcodetool",

@@ -117,7 +117,6 @@
         "vgravmap": "PowerNodeFragment17",
         "access_rules": [
           "$canTeleport2,$canGlitchBomb,$canDroneTeleport",
-          // "$canGlitchBomb,$canDroneTeleport,$canTeleport3" // Redundant
           "[progadvanced],highjump,$canTeleport2,$canDroneTeleport",
           "[progadvanced],grapple,$canTeleport2,$canDroneTeleport",
           "[progadvanced],$canDroneTeleport,$canTeleport3",
@@ -156,9 +155,7 @@
           "laserdrill,highjump,grapple,$canTeleport2",
           "$canTeleport2,$canDroneTeleport,$canEnhancedDroneLaunch,telereset",
           "$canDroneTeleport,$canEnhancedDroneLaunch,telereset",
-          // "$canDroneTeleport,$canEnhancedDroneLaunch,$canTeleport3,telereset" // Redundant
           "[progadvanced],$canTeleport2,$canDroneTeleport,telereset",
-          // "[progadvanced],$canDroneTeleport,$canTeleport3,telereset", // Redundant
           "[progadvanced],grapple,$canTeleport3",
           "[progmasochist],grapple,$canTeleport2",
 
@@ -193,7 +190,6 @@
         "vgravmap": "HealthNode7",
         "access_rules": [
           "$canTeleport2,$canGlitchBomb,$canDroneTeleport",
-          // "$canGlitchBomb,$canDroneTeleport,$canTeleport3", // Redundant
           "[progadvanced],highjump,$canTeleport2,$canDroneTeleport",
           "[progadvanced],grapple,$canTeleport2,$canDroneTeleport",
           "[progadvanced],$canDroneTeleport,$canTeleport3",
@@ -235,7 +231,7 @@
           "[progadvanced],laserdrill,grapple,$canTeleport2",
 
           // FIXME: VGR Needs
-          "$canTeleport2,highjump", // Likely Redundant due to Area Access
+          "$canTeleport2,highjump", // Check Indi > Edin requirements, otherwise not redundant
           "addressbomb,$canDroneTeleport"
         ],
         "map_locations": [
@@ -298,10 +294,8 @@
         "vgravmap": "HealthNodeFragment20",
         "access_rules": [
           "$canTeleport2,$canDroneTeleport,$canEnhancedDroneLaunch",
-          // "$canDroneTeleport,$canEnhancedDroneLaunch,$canTeleport3", // Redundant
           "[progadvanced],grapple,$canDroneTeleport,$canTeleport3",
           "[progadvanced],$canTeleport2,$canDroneTeleport,telereset",
-          // "[progadvanced],$canDroneTeleport,$canTeleport3,telereset" // Redundant
           "[progmasochist],grapple,$canDroneTeleport,telereset",
 
           // FIXME: VGR Needs
@@ -333,7 +327,6 @@
         "vgravmap": "TendrilsBottom",
         "access_rules": [
           "$canAirport2,$canDroneTeleport,$canEnhancedDroneLaunch",
-          // "$canDroneTeleport,$canEnhancedDroneLaunch,$canAirport3", // Redundant
           "[progadvanced],highjump,grapple,$canTeleport3",
           "[progmasochist],grapple,$canTeleport3",
           "[progmasochist],highjump,grapple,$canTeleport2"
@@ -403,14 +396,13 @@
           "$canTeleport2,$canDroneTeleport,$canEnhancedDroneLaunch",
           "highjump,$canGlitchBomb,$canTeleport3",
           "$canGlitchBomb,$canDroneTeleport,$canTeleport3",
-          // "$canDroneTeleport,$canEnhancedDroneLaunch,$canTeleport3" // Redundant
           "[progadvanced],$canGlitchGun2,$canTeleport2,$canDroneTeleport",
           "[progadvanced],laserdrill,grapple,$canTeleport2,$canGlitchBomb",
           "[progadvanced],$canGlitchBomb,$canTeleport3",
           "[progadvanced],highjump,grapple,$canTeleport3",
 
           // FIXME: VGR Needs
-          "$canTeleport2,addressbomb,highjump" // Likely Redundant due to Area Access
+          "$canTeleport2,addressbomb,highjump" // Check Indi > Edin for HJ+AB combo
         ],
         "map_locations": [
           {
@@ -447,7 +439,7 @@
           "[progadvanced],$canGlitchBomb,$canTeleport3",
 
           // FIXME: VGR Needs
-          "$canTeleport2,addressbomb", // Likely Redundant due to Area Access
+          "$canTeleport2,addressbomb", // Location Can be accessedd without AB, but requires AB to get
           "$canEnhancedDroneLaunch,$canDroneTeleport,addressbomb"
         ],
         "map_locations": [
@@ -511,7 +503,7 @@
           "[progadvanced],$canTeleport2,$canDroneTeleport",
 
           // FIXME: VGR Needs
-          "$canTeleport2,highjump" // Likely Redundant due to Area Access
+          "$canTeleport2,highjump" // Check Indi > Edin for HJ requirement
         ],
         "map_locations": [
           {

@@ -28,7 +28,7 @@
           "$canAirport2,$canGlitchGun1",
           "$canAirport2,highjump,$canDroneTeleport,grapple",
           "$canAirport3,$canDroneTeleport,grapple",
-          "highjump,$canGlitchGun1,grapple",                // Likely Redundant due to Area Access
+          "highjump,$canGlitchGun1,grapple",                // Area access does not explicitly require grapple
           "$canDroneTeleport,$canGlitchGun1,grapple"
         ],
         "map_locations": [
@@ -65,8 +65,8 @@
           "[progmasochist],$canGlitchGun1,grapple",
 
           // FIXME: VGR Needs
-          "$canTeleport1,highjump,$canGlitchGun1",  // Likely Redundant due to Area Access
-          "$canAirport2,$canGlitchGun1",            // Likely Redundant due to Area Access
+          "$canTeleport1,highjump,$canGlitchGun1",  // Requires glitching blocks + wall teleport/explicit access
+          "$canAirport2,$canGlitchGun1",            // ^^^
           "$canTeleport1,$canDroneTeleport,$canGlitchGun1",
           "$canAirport2,highjump,$canDroneTeleport",
           "$canAirport3,$canDroneTeleport",
@@ -108,7 +108,7 @@
 
           // FIXME: VGR Needs
           "$canAirport2,highjump",
-          "highjump,$canGlitchGun1" // Likely Redundant due to Area Access
+          "highjump,$canGlitchGun1" // Explicit access
         ],
         "map_locations": [
           {
@@ -174,16 +174,15 @@
           // EmoTracker-only
           "{highjump}",
           "{$canUseRemoteDrone}",
-
           "laserdrill,wave,$canGlitchGun1,highjump,$canTeleport1",
-          "laserdrill,$canTeleport2",
           "coat3",
           "[progadvanced],$canTeleport1,$canDroneTeleport",
           "[progmasochist],grapple",
 
           // FIXME: VGR Needs
-          "$canTeleport1,highjump",  // Likely Redundant due to Area Access
-          "$canTeleport2"            // Likely Redundant due to Area Access
+          "$canTeleport1,highjump",  // Requires HJ + moving through walls/explicit access
+          "$canTeleport2"            // ^^^
+          //"laserdrill,$canTeleport2" // This line should be redundant, due to above line
         ],
         "map_locations": [
           {
@@ -214,7 +213,6 @@
           "wave,$canGlitchGun1,$canUseRemoteDrone",
           "$canGlitchGun1,$canTeleport1,$canUseRemoteDrone",
           "$canUseRemoteDrone,$canAirport2",
-//          "$canUseRemoteDrone,coat3" // Redundant
 
           // FIXME: VGR Needs
           "highjump,$canUseRemoteDrone"
@@ -247,7 +245,6 @@
           "wave,$canGlitchGun1,$canUseRemoteDrone",
           "$canGlitchGun1,$canTeleport1,$canUseRemoteDrone",
           "$canUseRemoteDrone,$canTeleport2",
-//          "$canUseRemoteDrone,$canTeleport3"  // Redundant
           "[progadvanced],$canUseRemoteDrone,grapple",
           "[progadvanced],$canDroneTeleport",
 
@@ -282,13 +279,12 @@
           "laserdrill,wave,highjump,$canGlitchGun2",
           "laserdrill,highjump,$canTeleport1,$canGlitchGun2",
           "laserdrill,highjump,$canAirport2",
-//          "laserdrill,highjump,$canAirport3"  // Redundant
           "[progadvanced],laserdrill,$canAirport2",
           "[progadvanced],$canAirport3",
           "[progmasochist],grapple",
 
           // FIXME: VGR Needs
-          "$canAirport2,highjump",              // Likely Redundant due to Area Access
+          "$canAirport2,highjump",              // Explicit requirement
           "$canGlitchGun2,highjump",
           "$canGlitchGun2,$canUseRemoteDrone",
           "$canGlitchGun2,grapple"
@@ -326,8 +322,8 @@
           "[progmasochist],grapple",
 
           // FIXME: VGR Needs
-          "$canTeleport2",  // Likely Redundant due to Area Access
-          "highjump"        // Likely Redundant due to Area Access
+          "$canTeleport2",  // Area does not require HJ to access, but requires it to obtain item
+          "highjump"        // ^^^
         ],
         "map_locations": [
           {
@@ -364,7 +360,7 @@
           // FIXME: VGR Needs
           "$canTeleport1,highjump",
           "$canTeleport1,$canDroneTeleport",
-          "wave,highjump"                      // Likely Redundant due to Area Access
+          "wave,highjump"                      // General area (which excludes this specific hallway) does not require HJ to access
         ],
         "map_locations": [
           {
@@ -400,7 +396,7 @@
           "[progmasochist],grapple",
 
           // FIXME: VGR Needs
-          "$canTeleport2",      // Likely Redundant due to Area Access
+          "$canTeleport2",      // Requires teleporting through floor - Area does not require coat2 to access
           "$canUseRemoteDrone"
         ],
         "map_locations": [
@@ -428,7 +424,7 @@
         "short_name": "Health Node Fragment (Zi v)",
         "vgravmap": "HealthNodeFragment14",
         "access_rules": [
-          "laserdrill,wave,$canGlitchGun1,highjump",
+          "laserdrill,wave,$canGlitchGun1,highjump", //this line
           "laserdrill,$canGlitchGun1,highjump,$canTeleport1",
           "excavate,$canAirport2",
           "coat3",
@@ -437,7 +433,7 @@
           "[progmasochist],laserdrill,grapple",
 
           // FIXME: VGR Needs
-          "highjump,excavate"  // Likely Redundant due to Area Access
+          "highjump,excavate"  // Redundant due to above line
         ],
         "map_locations": [
           {
@@ -464,14 +460,14 @@
         "short_name": "Range Node (Zi)",
         "vgravmap": "RangeNode2",
         "access_rules": [
-          "laserdrill,wave,$canGlitchGun1,highjump,$canTeleport1",
+          "laserdrill,wave,$canGlitchGun1,highjump,$canTeleport1", //this line
           "laserdrill,coat2",
           "$canAirport3",
           "[progadvanced],$canTeleport1,$canDroneTeleport",
           "[progmasochist],$canTeleport1,grapple",
 
           // FIXME: VGR Needs
-          "$canTeleport1,highjump"  // Likely Redundant due to Area Access
+          "$canTeleport1,highjump"  // Redundant due to above line
         ],
         "map_locations": [
           {
@@ -498,7 +494,7 @@
         "short_name": "Passcode Tool",
         "vgravmap": "PasswordTool",
         "access_rules": [
-          "wave,$canGlitchGun1,$canUseRemoteDrone",
+          "wave,$canGlitchGun1,$canUseRemoteDrone", //This line
           "$canGlitchGun1,$canTeleport1,$canUseRemoteDrone",
           "laserdrill,coat2",
           "$canTeleport3",
@@ -506,7 +502,7 @@
           "[progadvanced],$canDroneTeleport",
 
           // FIXME: VGR Needs
-          "$canUseRemoteDrone",      // Likely Redundant due to Area Access
+          "$canUseRemoteDrone",      // Redundant due to above line
           "$canTeleport2,grapple",
           "$canTeleport2,highjump"
         ],
@@ -535,15 +531,15 @@
         "short_name": "Digital Paper (Zi) #2",
         "vgravmap": "Note19",
         "access_rules": [
-          "wave,$canGlitchGun1,$canUseRemoteDrone",
-          "$canGlitchGun1,$canTeleport1,$canUseRemoteDrone",
+          "wave,$canGlitchGun1,$canUseRemoteDrone", //this line
+          "$canGlitchGun1,$canTeleport1,$canUseRemoteDrone", //or this one
           "laserdrill,coat2",
           "$canAirport3",
           "[progadvanced],$canUseRemoteDrone,grapple",
           "[progadvanved],$canDroneTeleport",
 
           // FIXME: VGR Needs
-          "$canUseRemoteDrone",    // Likely Redundant due to Area Access
+          "$canUseRemoteDrone",    // Redundant due to above line
           "$canAirport2,grapple",
           "$canAirport2,highjump"
         ],
