@@ -1,4 +1,5 @@
 {
+  // Default tracker view
   "tracker_default": {
     "type": "container",
     "content": {
@@ -14,6 +15,12 @@
               "type": "group",
               "header": "Items",
               "dock": "top",
+              "header_content": {
+                  "type": "button_popup",
+                  "style": "settings",
+                  "popup_background": "#55212121",
+                  "layout": "settings_popup"
+              },
               "content": {
                 "type": "layout",
                 "key": "shared_item_grid"

@@ -1,11 +1,17 @@
 [
+  // High Jump Boots: highjump, hijump
+  // Plasma Beam:     plasma, plasmabeam
+  // Range:           rangelong, rangemedium, rangemed, rangeshort
+  // Spazer Beam:     spazer, spazerbeam, split, splits
+  // Wave Beam:       wave, wavebeam
+  // Wide Beam:       wide, widebeam
   // Address Bomb
   {
     "name": "Address Bomb",
     "type": "toggle",
     "loop": true,
     "img": "images/inventory/address-bomb.png",
-    "codes": "addressbomb"
+    "codes": "addressbomb,addressdisruptor,addressdisruptor2"
   },
   // Address Disruptor
   {
@@ -23,12 +29,12 @@
       { // Address Disruptor 1
         "name": "Address Disruptor 1",
         "img": "images/inventory/address-disruptor-1.png",
-        "codes": "addressdisruptor1,addressdisruptor"
+        "codes": "addressdisruptor1,addressdisruptor,telereset"
       },
       { // Address Disruptor 2
         "name": "Address Disruptor 2",
         "img": "images/inventory/address-disruptor-2.png",
-        "codes": "addressdisruptor2,addressdisruptor"
+        "codes": "addressdisruptor2,addressdisruptor,telereset"
       }
     ]
   },
@@ -90,38 +96,29 @@
     "img": "images/inventory/distortion-field.png",
     "codes": "distortionfield,rangeshort,wavebeam,wave"
   },
-  // Drone Teleport : #FIXME Requires Remote Drone
+  // Remote Drone
+  {
+    "name": "Remote Drone",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/inventory/remote-drone.png",
+    "codes": "remotedrone,excavate,rangeshort"
+  },
+  // Enhanced Drone Launch
+  {
+    "name": "Enhanced Drone Launch",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/inventory/enhanced-drone-launch.png",
+    "codes": "enhanceddronelaunch"
+  },
+  // Drone Teleport
   {
     "name": "Drone Teleport",
     "type": "toggle",
     "loop": true,
     "img": "images/inventory/drone-teleport.png",
     "codes": "droneteleport"
-  },
-  // Remote Drone
-  {
-    "name": "Remote Drone/Enhanced Drone Launch",
-    "type": "progressive",
-    "loop": true,
-    "allow_disabled": false,
-    "stages": [
-      { // No item
-        "name": "No Drone",
-        "img": "images/inventory/remote-drone.png",
-        "img_mods": "@disabled",
-        "codes": "drone"
-      },
-      { // Remote Drone
-        "name": "Remote Drone",
-        "img": "images/inventory/remote-drone.png",
-        "codes": "remotdrone"
-      },
-      { // Enhanced Drone Launch
-        "name": "Enhanced Drone Launch",
-        "img": "images/inventory/enhanced-drone-launch.png",
-        "codes": "enhanceddronelaunch"
-      }
-    ]
   },
   // Faded Note
   {
@@ -138,7 +135,7 @@
     "type": "toggle",
     "loop": true,
     "img": "images/inventory/fat-beam.png",
-    "codes": "fatbeam,rangelong,wavebeam,wave,widebeam,wide"
+    "codes": "fatbeam,rangelong,wavebeam,wave,wavelong,widebeam,wide"
   },
   // Field Disruptor
   {
@@ -154,7 +151,7 @@
     "type": "toggle",
     "loop": true,
     "img": "images/inventory/firewall.png",
-    "codes": "firewall,rangemedium,rangemed"
+    "codes": "firewall,rangemedium"
   },
   // Flamethrower
   {
@@ -179,7 +176,7 @@
     "loop": true,
     "img": "images/inventory/health-node-fragment.png",
     "codes": "healthnodefragment",
-    "max_quantity": 25
+    "max_quantity": 20
   },
   // Health Node
   {
@@ -188,7 +185,7 @@
     "loop": true,
     "img": "images/inventory/health-node.png",
     "codes": "healthnode",
-    "max_quantity": 9
+    "max_quantity": 12
   },
   // Heat Seeker
   {
@@ -198,13 +195,21 @@
     "img": "images/inventory/heat-seeker.png",
     "codes": "heatseeker,rangelong"
   },
+  // Nova
+  {
+    "name": "Nova",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/inventory/nova.png",
+    "codes": "nova,rangelong,split,splits,spazerbeam,spazer,spazershort,widebeam,wide"
+  },
   // Hypo-Atomizer
   {
     "name": "Hypo-Atomizer",
     "type": "toggle",
     "loop": true,
     "img": "images/inventory/hypo-atomizer.png",
-    "codes": "hypoatomizer,rangelong,splits,split,spazerbeam,spazer,widebeam,wide"
+    "codes": "hypoatomizer,rangelong,nova,splits,split,spazerbeam,spazer,spazershort,widebeam,wide"
   },
   // Inertial Pulse
   {
@@ -236,7 +241,7 @@
     "type": "toggle",
     "loop": true,
     "img": "images/inventory/laser-drill.png",
-    "codes": "laserdrill"
+    "codes": "laserdrill,rangeshort,excavate,telereset"
   },
   // Lightning Gun
   {
@@ -262,17 +267,17 @@
       { // Modified Lab Coat
         "name": "Modified Lab Coat",
         "img": "images/inventory/modified-lab-coat.png",
-        "codes": "coat1,coat"
+        "codes": "coat1,coat,teleport1"
       },
       { // Trench Coat
         "name": "Trench Coat",
         "img": "images/inventory/trench-coat.png",
-        "codes": "coat2,coat"
+        "codes": "highjump,hijump,coat2,coat,teleport2,airport1,airport2"
       },
       { // Red Coat
         "name": "Red Coat",
         "img": "images/inventory/red-coat.png",
-        "codes": "coat3,coat"
+        "codes": "coat3,coat,excavate,highjump,hijump,teleport3,airport3"
       }
     ]
   },
@@ -282,15 +287,7 @@
     "type": "toggle",
     "loop": true,
     "img": "images/inventory/multi-disruptor.png",
-    "codes": "multidisruptor,rangeshort,split,splits,spazerbeam,spazer,widebeam,wide"
-  },
-  // Nova
-  {
-    "name": "Nova",
-    "type": "toggle",
-    "loop": true,
-    "img": "images/inventory/nova.png",
-    "codes": "nova,rangelong,split,splits,spazerbeam,spazer,widebeam,wide"
+    "codes": "multidisruptor,rangeshort,nova,split,splits,spazerbeam,spazer,widebeam,wide"
   },
   // Orbital Discharge
   {
@@ -298,7 +295,7 @@
     "type": "toggle",
     "loop": true,
     "img": "images/inventory/orbital-discharge.png",
-    "codes": "orbitaldischarge,rangelong,snakeshooter,snake"
+    "codes": "orbitaldischarge,rangelong,snakeshooter,snake,nova"
   },
   // Passcode Tool
   {
@@ -315,7 +312,7 @@
     "loop": true,
     "img": "images/inventory/power-node-fragment.png",
     "codes": "powernodefragment",
-    "max_quantity": 18
+    "max_quantity": 30
   },
   // Power Node
   {
@@ -324,7 +321,7 @@
     "loop": true,
     "img": "images/inventory/power-node.png",
     "codes": "powernode",
-    "max_quantity": 6
+    "max_quantity": 10
   },
   // Quantum Variegator
   {
@@ -341,7 +338,7 @@
     "loop": true,
     "img": "images/inventory/range-node.png",
     "codes": "rangenode",
-    "max_quantity": 6
+    "max_quantity": 5
   },
   // Reflector
   {
@@ -349,7 +346,7 @@
     "type": "toggle",
     "loop": true,
     "img": "images/inventory/reflector.png",
-    "codes": "reflector,rangelong,bounce"
+    "codes": "reflector,rangelong,bounce,nova"
   },
   // Reverse Slicer
   {
@@ -357,7 +354,7 @@
     "type": "toggle",
     "loop": true,
     "img": "images/inventory/reverse-slicer.png",
-    "codes": "reverseslicer,rangemedium,rangemed,wavebeam,wave"
+    "codes": "reverseslicer,rangemedium,wavebeam,wave,nova"
   },
   // Rusalka Tablet
   {
@@ -382,7 +379,7 @@
     "type": "toggle",
     "loop": true,
     "img": "images/inventory/shards.png",
-    "codes": "shards,rangeshort,split,splits,spazerbeam,spazer,widebeam,wide"
+    "codes": "shards,rangeshort,widebeam,wide"
   },
   // Size Node
   {
@@ -391,7 +388,7 @@
     "loop": true,
     "img": "images/inventory/size-node.png",
     "codes": "sizenode",
-    "max_quantity": 6
+    "max_quantity": 5
   },
   // Sudran Key
   {
@@ -424,6 +421,14 @@
     "loop": true,
     "img": "images/inventory/voranj.png",
     "codes": "voranj,rangelong,splits,split,spazerbeam,spazer,widebeam,wide"
+  },
+  // Connections
+  {
+    "name": "Connections",
+    "type": "toggle",
+    "loop": true,
+    "img": "images/connections/all.png",
+    "codes": "connections"
   },
   // Secret World
   {

@@ -4,12 +4,20 @@
     "name": "E-Kur-Mah",
     "color": "#2C6D59",
     "parent": "Sudra",
+    "access_rules": [ // Eribu -> Absu, Absu -> Zi -> North Kur -> E-Kur-Mah
+      "$canTeleport2,$canDroneTeleport,grapple,highjump,$canEnhancedDroneLaunch",
+      "$canTeleport3"
+    ],
     "children": [
       // Power Node (E-Kur-Mah)
       {
         "name": "Power Node (E-Kur-Mah)",
         "short_name": "Power Node (E-Kur-Mah)",
-        "access_rules": [ ],
+        "vgravmap": "PowerNode6",
+        "access_rules": [
+          "$canAirport3,highjump,grapple",
+          "sudrankey"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -33,7 +41,11 @@
       {
         "name": "Sudran Key",
         "short_name": "Sudran Key",
-        "access_rules": [ ],
+        "vgravmap": "BreachSuppressor",
+        "access_rules": [
+          "$canTeleport2,$canDroneTeleport,grapple,highjump,$canEnhancedDroneLaunch",
+          "$canTeleport3,highjump,$canDroneTeleport"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -57,7 +69,10 @@
       {
         "name": "Clay Tablet (E-Kur-Mah top right)",
         "short_name": "Clay Tablet (E-Kur-Mah ^>)",
-        "access_rules": [ ],
+        "access_rules": [
+          "$canTeleport2,$canDroneTeleport,grapple,highjump,$canEnhancedDroneLaunch",
+          "$canTeleport3,highjump,$canDroneTeleport"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -81,7 +96,11 @@
       {
         "name": "Clay Tablet (E-Kur-Mah top left)",
         "short_name": "Clay Tablet (E-Kur-Mah <^)",
-        "access_rules": [ ],
+        "access_rules": [
+          "$canTeleport2,$canDroneTeleport,grapple,highjump,$canEnhancedDroneLaunch",
+          "$canTeleport3,highjump,$canDroneTeleport",
+          "$canAirport3,highjump,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -105,7 +124,11 @@
       {
         "name": "Clay Tablet (E-Kur-Mah bottom)",
         "short_name": "Clay Tablet (E-Kur-Mah v)",
-        "access_rules": [ ],
+        "access_rules": [
+          "{}",
+          "$canTeleport3,sudrankey",
+          "$canAirport3,highjump,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -121,15 +144,19 @@
         "sections": [
           {
             "name": "Item",
-            "item_count": 1
+            "item_count": 1,
+            "capture_item": true
           }
         ]
       },
-      // Quantum Veriegator
+      // Quantum Veriegator (ISKART-EHANZU)
       {
-        "name": "Quantum Veriegator",
-        "short_name": "Quantum Veriegator",
-        "access_rules": [ ],
+        "name": "Quantum Veriegator (ISKART-EHANZU)",
+        "short_name": "Quantum Veriegator (ISKART-EHANZU)",
+        "access_rules": [
+          "$canTeleport1,passcodetool,$canEnhancedDroneLaunch,$canDroneTeleport",
+          "$canAirport3,passcodetool,$canDroneTeleport,highjump"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -153,7 +180,11 @@
       {
         "name": "Health Node Fragment (E-Kur-Mah)",
         "short_name": "Health Node Fragment (E-Kur-Mah)",
-        "access_rules": [ ],
+        "vgravmap": "HealthNodeFragment17",
+        "access_rules": [
+          "$canAirport3,$canUseRemoteDrone",
+          "highjump,$canEnhancedDroneLaunch,sudrankey"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -177,7 +208,11 @@
       {
         "name": "Red Coat",
         "short_name": "Red Coat",
-        "access_rules": [ ],
+        "vgravmap": "RedCoat",
+        "access_rules": [
+          "$canTeleport2,$canDroneTeleport,grapple,highjump,$canEnhancedDroneLaunch",
+          "$canTeleport3"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -201,7 +236,11 @@
       {
         "name": "Power Node Fragment (E-Kur-Mah)",
         "short_name": "Power Node Fragment (E-Kur-Mah)",
-        "access_rules": [ ],
+        "vgravmap": "PowerNodeFragment18",
+        "access_rules": [
+          "$canTeleport2,$canDroneTeleport,grapple,highjump,$canEnhancedDroneLaunch,sudrankey",
+          "$canTeleport3"
+        ],
         "map_locations": [
           {
             "map": "sudra",

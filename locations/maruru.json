@@ -4,12 +4,17 @@
     "name": "Mar-Uru",
     "color": "#C72FFF",
     "parent": "Sudra",
+    "access_rules": [ // Eribu -> Ukkin-Na -> Mar-Uru
+      "$canTeleport3,$canEnhancedDroneLaunch,$canDroneTeleport,highjump"
+    ],
     "children": [
       // Digital Paper (Mar-Uru top)
       {
         "name": "Digital Paper (Mar-Uru top)",
         "short_name": "Digital Paper (Mar-Uru ^)",
-        "access_rules": [ ],
+        "access_rules": [
+          "$canTeleport3,$canEnhancedDroneLaunch,$canDroneTeleport,highjump"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -33,7 +38,9 @@
       {
         "name": "Digital Paper (Mar-Uru bottom)",
         "short_name": "Digital Paper (Mar-Uru v)",
-        "access_rules": [ ],
+        "access_rules": [
+          "$canTeleport3,$canEnhancedDroneLaunch,$canDroneTeleport,highjump"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -57,7 +64,11 @@
       {
         "name": "Reverse Slicer",
         "short_name": "Reverse Slicer",
-        "access_rules": [ ],
+        "vgravmap": "Scythe",
+        "access_rules": [
+          "$canTeleport3,$canGlitchGun1,$canEnhancedDroneLaunch,$canDroneTeleport,highjump",
+          "$canTeleport3,fatbeam,$canEnhancedDroneLaunch,$canDroneTeleport,highjump"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -81,7 +92,10 @@
       {
         "name": "Size Node (Mar-Uru)",
         "short_name": "Size Node (Mar-Uru)",
-        "access_rules": [ ],
+        "vgravmap": "SizeNode4",
+        "access_rules": [
+          "$canTeleport3,$canEnhancedDroneLaunch,$canDroneTeleport,highjump"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -105,7 +119,10 @@
       {
         "name": "Health Node (Mar-Uru)",
         "short_name": "Health Node (Mar-Uru)",
-        "access_rules": [ ],
+        "vgravmap": "HealthNode8",
+        "access_rules": [
+          "$canTeleport3,$canEnhancedDroneLaunch,$canDroneTeleport,highjump"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -129,7 +146,9 @@
       {
         "name": "Power Node Fragment (Mar-Uru top)",
         "short_name": "Power Node Fragment (Mar-Uru ^)",
-        "access_rules": [ ],
+        "access_rules": [
+          "$canTeleport3,$canGlitchGun1,$canEnhancedDroneLaunch,$canDroneTeleport,highjump"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -153,7 +172,9 @@
       {
         "name": "Clay Tablet (Mar-Uru) (2 items)",
         "short_name": "Clay Tablet (Mar-Uru) (2 items)",
-        "access_rules": [ ],
+        "access_rules": [
+          "$canTeleport3,$canGlitchGun1,$canEnhancedDroneLaunch,$canDroneTeleport,highjump"
+        ],
         "map_locations": [
           {
             "map": "sudra",

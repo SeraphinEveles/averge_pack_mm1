@@ -4,12 +4,22 @@
     "name": "Indi",
     "color": "#00AD8C",
     "parent": "Sudra",
+    "access_rules": [
+      "@Eribu -> Indi/Connection"
+    ],
     "children": [
       // Rusalka Tablet (Indi)
       {
         "name": "Rusalka Tablet (Indi)",
         "short_name": "Rusalka Tablet (Indi)",
-        "access_rules": [ ],
+        "vgravmap": "Note9",
+        "access_rules": [
+          "{}",
+          "$canAirport3",
+          "$canAirport2,excavate",
+          "[progmasochist],highjump,grapple",
+          "[progmasochist],$canTeleport2,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -25,7 +35,8 @@
         "sections": [
           {
             "name": "Item",
-            "item_count": 1
+            "item_count": 1,
+            "capture_item": true
           }
         ]
       },
@@ -33,7 +44,10 @@
       {
         "name": "Health Node Fragment (Slug Glitch)",
         "short_name": "Health Node Fragment (Slug Glitch)",
-        "access_rules": [ ],
+        "vgravmap": "HealthNodeFragment15",
+        "access_rules": [
+          "$canGlitchGun1"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -57,7 +71,12 @@
       {
         "name": "Digital Paper (Indi)",
         "short_name": "Digital Paper (Indi)",
-        "access_rules": [ ],
+        "vgravmap": "Note25",
+        "access_rules": [
+          "$canUseRemoteDrone,grapple",
+          "$canUseRemoteDrone,$canTeleport2",
+          "$canDroneTeleport"
+        ],
         "map_locations": [
           {
             "map": "sudra",

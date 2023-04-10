@@ -4,12 +4,20 @@
     "name": "Edin",
     "color": "#3A16A0",
     "parent": "Sudra",
+    "access_rules": [ // Eribu -> Ukkin-Na -> Edin
+      "$canTeleport2"
+    ],
     "children": [
       // Drone Teleport
       {
         "name": "Drone Teleport",
         "short_name": "Drone Teleport",
-        "access_rules": [ ],
+        "vgravmap": "DroneTeleport",
+        "access_rules": [
+          "$canTeleport2,highjump,$canShootLong,$canUseRemoteDrone",
+          "$canTeleport2,$canGlitchBomb,$canDroneTeleport",
+          "$canTeleport3,$canGlitchBomb,$canShootLong,$canUseRemoteDrone"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -33,7 +41,11 @@
       {
         "name": "Clay Tablet (Edin)",
         "short_name": "Clay Tablet (Edin)",
-        "access_rules": [ ],
+        "access_rules": [
+          "$canTeleport2,$canGlitchBomb,$canDroneTeleport",
+          "$canTeleport2,highjump,$canDroneTeleport",
+          "$canTeleport3"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -57,7 +69,11 @@
       {
         "name": "Distortion Field",
         "short_name": "Distortion Field",
-        "access_rules": [ ],
+        "vgravmap": "DistortionField",
+        "access_rules": [
+          "$canTeleport2,highjump,$canEnhancedDroneLaunch,$canDroneTeleport",
+          "$canTeleport3,$canEnhancedDroneLaunch,$canDroneTeleport"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -81,7 +97,11 @@
       {
         "name": "Power Node Fragment (Edin top)",
         "short_name": "Power Node Fragment (Edin ^)",
-        "access_rules": [ ],
+        "access_rules": [
+          "$canTeleport2,highjump,$canDroneTeleport,$canGlitchBomb",
+          "$canTeleport3,$canDroneTeleport,$canGlitchBomb",
+          "$canGlitchBomb,$canEnhancedDroneLaunch,$canDroneTeleport"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -105,7 +125,11 @@
       {
         "name": "Health Node Fragment (Edin top)",
         "short_name": "Health Node Fragment (Edin ^)",
-        "access_rules": [ ],
+        "access_rules": [
+          "$canTeleport2,highjump,grapple,$canUseRemoteDrone",
+          "$canTeleport2,$canDroneTeleport,grapple",
+          "$canTeleport3,grapple,$canUseRemoteDrone"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -129,7 +153,12 @@
       {
         "name": "Health Node (Edin)",
         "short_name": "Health Node (Edin)",
-        "access_rules": [ ],
+        "vgravmap": "HealthNode6",
+        "access_rules": [
+          "$canTeleport2,highjump,$canDroneTeleport,$canGlitchBomb",
+          "$canTeleport3,$canDroneTeleport,$canGlitchBomb",
+          "$canGlitchBomb,$canDroneTeleport"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -153,7 +182,11 @@
       {
         "name": "Rusalka Tablet (Edin)",
         "short_name": "Rusalka Tablet (Edin)",
-        "access_rules": [ ],
+        "access_rules": [
+          "$canTeleport2,highjump",
+          "$canTeleport3",
+          "$canGlitchBomb,$canDroneTeleport"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -168,7 +201,7 @@
         ],
         "sections": [
           {
-            "name": "Item",
+            "name": "Hidden Wall",
             "item_count": 1
           }
         ]
@@ -177,7 +210,11 @@
       {
         "name": "Digital Paper (Edin top)",
         "short_name": "Digital Paper (Edin ^)",
-        "access_rules": [ ],
+        "access_rules": [
+          "$canTeleport2,highjump,$canGlitchGun1",
+          "$canTeleport2,$canDroneTeleport,$canGlitchGun1",
+          "$canTeleport3"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -201,7 +238,9 @@
       {
         "name": "Health Node Fragment (Edin left)",
         "short_name": "Health Node Fragment (Edin <)",
-        "access_rules": [ ],
+        "access_rules": [
+          "$canEnhancedDroneLaunch,$canDroneTeleport,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -225,7 +264,10 @@
       {
         "name": "Bioflux Accelerator 2",
         "short_name": "Bioflux Accelerator 2",
-        "access_rules": [ ],
+        "vgravmap": "TendrilsBottom",
+        "access_rules": [
+          "$canAirport2,$canEnhancedDroneLaunch,$canDroneTeleport"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -249,7 +291,11 @@
       {
         "name": "Digital Paper (Edin bottom)",
         "short_name": "Digital Paper (Edin v)",
-        "access_rules": [ ],
+        "access_rules": [
+          "$canAirport2,highjump,$canGlitchGun1",
+          "$canAirport2,$canDroneTeleport,$canGlitchGun1",
+          "$canTeleport3,$canGlitchGun1"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -269,11 +315,14 @@
           }
         ]
       },
-      // Health Node Fragment (Edin right) (2 items)
+      // Health & Power Nodes (Edin right) (2 items)
       {
-        "name": "Health Node Fragment (Edin right) (2 items)",
-        "short_name": "Health Node Fragment (Edin >) (2 items)",
-        "access_rules": [ ],
+        "name": "Health & Power Nodes (Edin right) (2 items)",
+        "short_name": "Health & Power Nodes (Edin >) (2 items)",
+        "access_rules": [
+          "$canTeleport2,$canGlitchBomb,highjump",
+          "$canTeleport3,$canEnhancedDroneLaunch,$canDroneTeleport"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -288,8 +337,12 @@
         ],
         "sections": [
           {
-            "name": "Item",
-            "item_count": 2
+            "name": "Power Node",
+            "item_count": 1
+          },
+          {
+            "name": "Health Node",
+            "item_count": 1
           }
         ]
       },
@@ -297,7 +350,11 @@
       {
         "name": "Shards",
         "short_name": "Shards",
-        "access_rules": [ ],
+        "vgravmap": "Shards",
+        "access_rules": [
+          "$canTeleport2,$canGlitchBomb",
+          "$canEnhancedDroneLaunch,$canDroneTeleport,$canGlitchBomb"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -321,7 +378,10 @@
       {
         "name": "Range Node (Edin)",
         "short_name": "Range Node (Edin)",
-        "access_rules": [ ],
+        "vgravmap": "RangeNode3",
+        "access_rules": [
+          "$canAirport2,highjump,$canUseRemoteDrone"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -345,7 +405,12 @@
       {
         "name": "Address Bomb",
         "short_name": "Address Bomb",
-        "access_rules": [ ],
+        "vgravmap": "GlitchBomb",
+        "access_rules": [
+          "$canTeleport2,highjump",
+          "$canTeleport2,$canDroneTeleport",
+          "$canTeleport3"
+        ],
         "map_locations": [
           {
             "map": "sudra",

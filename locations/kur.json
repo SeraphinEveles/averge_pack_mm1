@@ -4,12 +4,29 @@
     "name": "Kur",
     "color": "#8B176E",
     "parent": "Sudra",
+    "access_rules": [ // Eribu -> Absu, Absu -> Zi -> Kur
+      "$canTeleport1,excavate,$canGlitchGun1",
+      "$canTeleport2,excavate",
+      "$canTeleport3",
+      "excavate,wave,$canGlitchGun1"
+    ],
     "children": [
       // Clay Tablet (Kur top)
       {
         "name": "Clay Tablet (Kur top)",
         "short_name": "Clay Tablet (Kur ^)",
-        "access_rules": [ ],
+        "vgravmap": "Note12",
+        "access_rules": [
+          "$canAirport3,highjump,$canDroneTeleport",
+          "$canAirport3,highjump,grapple",
+          "$canDroneTeleport,grapple,highjump,$canEnhancedDroneLaunch",
+          "[progadvanced],$canDroneTeleport,$canTeleport1,laserdrill",
+          "[progadvanced],$canDroneTeleport,$canTeleport1,addressdisruptor",
+          "[progadvanced],$canTeleport1,grapple,$canDroneTeleport",
+          "[progadvanced],excavate,highjump,grapple,$canTeleport2",
+          "[progadvanced],$canTeleport3,grapple",
+          "[progmasochist],grapple,$canTeleport2"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -29,11 +46,18 @@
           }
         ]
       },
-      // Power Node Fragment (Kur)
+      // Power Node Fragment (Snowy Kur)
       {
-        "name": "Power Node Fragment (Kur)",
-        "short_name": "Power Node Fragment (Kur)",
-        "access_rules": [ ],
+        "name": "Power Node Fragment (Snowy Kur)",
+        "short_name": "Power Node Fragment (Snowy Kur)",
+        "vgravmap": "PowerNodeFragment14",
+        "access_rules": [
+          "$canDroneTeleport,grapple,$canGlitchGun2",
+          "$canAirport3,highjump,$canGlitchGun2",
+          "highjump,grapple,$canGlitchGun2",
+          "[progadvanced],$canDroneTeleport,$canTeleport1,addressdisruptor",
+          "[progmasochist],highjump,$canTeleport3"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -53,11 +77,20 @@
           }
         ]
       },
-      // Power Node (Kur top)
+      // Power Node (Zoo)
       {
-        "name": "Power Node (Kur top)",
-        "short_name": "Power Node (Kur ^)",
-        "access_rules": [ ],
+        "name": "Power Node (Zoo)",
+        "short_name": "Power Node (Zoo)",
+        "vgravmap": "PowerNode4",
+        "access_rules": [
+          "$canTeleport1,$canGlitchGun2,highjump",
+          "$canTeleport1,$canGlitchGun2,$canDroneTeleport",
+          "[progadvanced],$canAirport2,$canUseRemoteDrone",
+          "[progadvanced],$canGlitchGun2,$canDroneTeleport",
+          "[progmasochist],$canAirport2,grapple",
+          "[progmasochist],highjump,$canGlitchGun2,grapple",
+          "[progmasochist],$canDroneTeleport,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -77,11 +110,21 @@
           }
         ]
       },
-      // Clay Tablet (Kur middle)
+      // Journal Page (Kur middle)
       {
-        "name": "Clay Tablet (Kur middle)",
-        "short_name": "Clay Tablet (Kur =)",
-        "access_rules": [ ],
+        "name": "Journal Page (Kur middle)",
+        "short_name": "Journal Page (Kur =)",
+        "vgravmap": "Note17",
+        "access_rules": [
+          "$canAirport3,highjump,$canEnhancedDroneLaunch",
+          "$canAirport3,highjump,$canGlitchGun2",
+          "$canDroneTeleport,grapple,$canGlitchGun2",
+          "highjump,grapple,$canGlitchGun2",
+          "$canDroneTeleport,grapple,$canEnhancedDroneLaunch",
+          "highjump,grapple,$canEnhancedDroneLaunch",
+          "[progadvanced],$canDroneTeleport,$canTeleport1",
+          "[progmasochist],$canTeleport3"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -105,7 +148,15 @@
       {
         "name": "Reflector",
         "short_name": "Reflector",
-        "access_rules": [ ],
+        "vgravmap": "Reflect",
+        "access_rules": [
+          "$canAirport3,highjump,$canUseRemoteDrone",
+          "$canDroneTeleport,grapple",
+          "[progadvanced],highjump,grapple,$canUseRemoteDrone",
+          "[progadvanced],addressdisruptor,$canTeleport1,$canDroneTeleport",
+          "[progadvanced],excavate,$canTeleport1,$canDroneTeleport",
+          "[progmasochist],highjump,$canUseRemoteDrone,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -129,7 +180,13 @@
       {
         "name": "Enhanced Drone Launch",
         "short_name": "Enhanced Drone Launch",
-        "access_rules": [ ],
+        "vgravmap": "EnhancedLaunch",
+        "access_rules": [
+          "$canAirport3,highjump",
+          "highjump,grapple",
+          "[progadvanced],$canDroneTeleport,$canTeleport2",
+          "[progmasochist],$canDroneTeleport,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -149,11 +206,19 @@
           }
         ]
       },
-      // Health Node Fragment (Kur top right)
+      // Health Node Fragment (Zoo)
       {
-        "name": "Health Node Fragment (Kur top right)",
-        "short_name": "Health Node Fragment (Kur ^>)",
-        "access_rules": [ ],
+        "name": "Health Node Fragment (Zoo)",
+        "short_name": "Health Node Fragment (Zoo)",
+        "vgravmap": "HealthNodefragment11",
+        "access_rules": [
+          "$canTeleport1,$canGlitchGun2,highjump,$canUseRemoteDrone,grapple",
+          "$canTeleport1,$canGlitchGun2,$canDroneTeleport",
+          "$canAirport2,highjump",
+          "$canAirport3",
+          "[progadvanced],$canDroneTeleport,$canTeleport2",
+          "[progmasochist],$canDroneTeleport,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -177,7 +242,15 @@
       {
         "name": "Health Node Fragment (Kur top left)",
         "short_name": "Health Node Fragment (Kur <^)",
-        "access_rules": [ ],
+        "vgravmap": "HealthNodeFragment12",
+        "access_rules": [
+          "$canAirport3,highjump,$canUseRemoteDrone",
+          "$canDroneTeleport,grapple",
+          "highjump,grapple,$canUseRemoteDrone",
+          "[progadvanced],highjump,$canTeleport1,$canUseRemoteDrone,grapple",
+          "[progadvanced],$canTeleport1,$canDroneTeleport",
+          "[progmasochist],highjump,$canUseRemoteDrone,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -201,7 +274,15 @@
       {
         "name": "Grapple",
         "short_name": "Grapple",
-        "access_rules": [ ],
+        "vgravmap": "Grapple",
+        "access_rules": [
+          "$canTeleport1,$canGlitchGun2,highjump,$canUseRemoteDrone",
+          "$canTeleport1,$canGlitchGun2,$canDroneTeleport",
+          "$canAirport2,highjump",
+          "$canAirport3",
+          "[progadvanced],$canDroneTeleport,$canTeleport2",
+          "[progmasochist],$canDroneTeleport,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -225,7 +306,15 @@
       {
         "name": "Clay Tablet (Kur bottom)",
         "short_name": "Clay Tablet (Kur v)",
-        "access_rules": [ ],
+        "vgravmap": "Note13",
+        "access_rules": [
+          "$canAirport3,highjump,$canUseRemoteDrone",
+          "$canDroneTeleport,grapple",
+          "highjump,grapple,$canUseRemoteDrone",
+          "[progadvanced],highjump,$canTeleport1,$canUseRemoteDrone,grapple",
+          "[progadvanced],$canTeleport1,$canDroneTeleport",
+          "[progmasochist],highjump,$canUseRemoteDrone,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -249,7 +338,16 @@
       {
         "name": "Health Node Fragment (Kur middle left)",
         "short_name": "Health Node Fragment (Kur <=)",
-        "access_rules": [ ],
+        "vgravmap": "HealthNodeFragment8",
+        "access_rules": [
+          "$canAirport2,highjump,$canDroneTeleport",
+          "highjump,grapple",
+          "addressdisruptor,highjump,$canTeleport1,$canUseRemoteDrone",
+          "$canUseRemoteDrone,$canTeleport2",
+          "[progadvanced],$canTeleport1,$canDroneTeleport",
+          "[progmasochist],highjump,grapple",
+          "[progmasochist],$canAirport3"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -273,7 +371,12 @@
       {
         "name": "Health Node (Kur)",
         "short_name": "Health Node (Kur)",
-        "access_rules": [ ],
+        "vgravmap": "HealthNode4",
+        "access_rules": [
+          "$canTeleport1,$canGlitchGun2,highjump",
+          "$canTeleport1,$canGlitchGun2,$canDroneTeleport",
+          "$canAirport2"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -297,7 +400,10 @@
       {
         "name": "Ion Beam",
         "short_name": "Ion Beam",
-        "access_rules": [ ],
+        "vgravmap": "IonBeam",
+        "access_rules": [
+          "$canAirport3"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -321,7 +427,15 @@
       {
         "name": "Remote Drone",
         "short_name": "Remote Drone",
-        "access_rules": [ ],
+        "vgravmap": "DroneGun",
+        "access_rules": [
+          "$canTeleport1,highjump",
+          "$canTeleport1,$canDroneTeleport",
+          "$canTeleport3",
+          "[progadvanced],excavate,$canTeleport2",
+          "[progadvanced],$canTeleport1,$canDroneTeleport",
+          "[progmasochist],excavate,highjump,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -345,7 +459,13 @@
       {
         "name": "Hypo-Atomizer",
         "short_name": "Hypo-Atomizer",
-        "access_rules": [ ],
+        "vgravmap": "VerticalSpread",
+        "access_rules": [
+          "$canTeleport1,$canUseRemoteDrone",
+          "$canTeleport3",
+          "[progadvanced],$canTeleport1,$canDroneTeleport",
+          "[progmasochist],highjump,$canUseRemoteDrone,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -369,7 +489,13 @@
       {
         "name": "Health Node Fragment (Kur middle right)",
         "short_name": "Health Node Fragment (Kur =>)",
-        "access_rules": [ ],
+        "vgravmap": "HealthNodeFragment9",
+        "access_rules": [
+          "$canTeleport2,$canUseRemoteDrone,$canGlitchGun2",
+          "$canGlitchGun2,highjump,$canUseRemoteDrone,$canTeleport1",
+          "$canUseRemoteDrone,$canTeleport3",
+          "[progadvanced],$canUseRemoteDrone,$canTeleport2"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -393,7 +519,15 @@
       {
         "name": "Power Node (Kur bottom)",
         "short_name": "Power Node (Kur v)",
-        "access_rules": [ ],
+        "vgravmap": "PowerNode3",
+        "access_rules": [
+          "{}",
+          "$canTeleport1,highjump",
+          "$canAirport2",
+          "[progadvanced],$canTeleport1,$canDroneTeleport",
+          "[progadvanced],$canTeleport1,grapple",
+          "[progmasochist],grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -409,7 +543,8 @@
         "sections": [
           {
             "name": "Item",
-            "item_count": 1
+            "item_count": 1,
+            "capture_item": true
           }
         ]
       },
@@ -417,7 +552,10 @@
       {
         "name": "Health Node Fragment (Kur bottom)",
         "short_name": "Health Node Fragment (Kur v)",
-        "access_rules": [ ],
+        "vgravmap": "HealthNodeFragment10",
+        "access_rules": [
+          "$canUseRemoteDrone"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -441,7 +579,15 @@
       {
         "name": "Firewall",
         "short_name": "Firewall",
-        "access_rules": [ ],
+        "vgravmap": "FireWall",
+        "access_rules": [
+          "$canAirport2",
+          "highjump",
+          "$canUseRemoteDrone",
+          "[progadvanced],excavate,grapple",
+          "[progadvanced],$canDroneTeleport",
+          "[progmasochist],grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -456,16 +602,24 @@
         ],
         "sections": [
           {
-            "name": "Item",
+            "name": "Hidden Wall",
             "item_count": 1
           }
         ]
       },
-      // Address Disrupter 2
+      // Address Disruptor 2
       {
-        "name": "Address Disrupter 2",
-        "short_name": "Address Disrupter 2",
-        "access_rules": [ ],
+        "name": "Address Disruptor 2",
+        "short_name": "Address Disruptor 2",
+        "vgravmap": "$canGlitchGun2",
+        "access_rules": [
+          "$canTeleport1,$canUseRemoteDrone",
+          "$canTeleport2,highjump",
+          "$canTeleport3",
+          "$canGlitchGun2,excavate",
+          "$canTeleport2,$canUseRemoteDrone",
+          "[progadvanced],$canUseRemoteDrone,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -489,7 +643,17 @@
       {
         "name": "Field Disruptor",
         "short_name": "Field Disruptor",
-        "access_rules": [ ],
+        "vgravmap": "HighJump",
+        "access_rules": [
+          "$canTeleport1,excavate,$canGlitchGun1",
+          "$canTeleport2,excavate",
+          "$canTeleport3",
+          "excavate,wave,$canGlitchGun1",
+          "[progadvanced],excavate,grapple",
+          "[progadvanced],excavate,$canTeleport2",
+          "[progadvanced],$canDroneTeleport",
+          "[progmasochist],grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -513,7 +677,14 @@
       {
         "name": "Tethered Charge",
         "short_name": "Tethered Charge",
-        "access_rules": [ ],
+        "vgravmap": "TetheredCharge",
+        "access_rules": [
+          "$canTeleport1,highjump,$canDroneTeleport,$canGlitchGun1",
+          "$canTeleport2,fatbeam",
+          "$canTeleport3,$canGlitchGun1",
+          "excavate,$canGlitchGun1,grapple,$canTeleport2",
+          "[progadvanced],$canGlitchGun1,$canTeleport1,$canUseRemoteDrone,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",

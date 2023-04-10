@@ -1,0 +1,248 @@
+# workflow name
+name: Manage Release
+
+# fire on
+on: [push, pull_request]
+
+#########
+# actions
+#########
+# actions/checkout@v3.5.0
+# actions/download-artifact@v3.0.2
+# actions/create-release@v1.1.4
+# actions/upload-release-asset@v1.0.2
+# benc-uk/workflow-dispatch@v1.2.2
+# ./.github/actions/get-parent-dir
+# ./.github/actions/install
+# ./.github/actions/test
+
+# stuff to do
+jobs:
+  install-test:
+    name: 💿/⏱️
+    runs-on: ${{ matrix.os-name }}
+    strategy:
+      matrix:
+        os-name: [ubuntu-latest]
+        python-version: [3.8]
+    steps:
+      # checkout commit
+      - name: ✔️Checkout commit
+        uses: actions/checkout@v3.5.0
+      # install
+      - name: 💿Call Install
+        uses: ./.github/actions/install
+        with:
+          os-name: ${{ matrix.os-name }}
+          python-version: ${{ matrix.python-version }}
+      # Analyze used GitHub Actions
+      - name: Analyze used GitHub Actions
+        shell: bash
+        run: |
+          python ./resources/ci/common/list_actions.py
+      # test
+      - name: ⏱️Call Test
+        uses: ./.github/actions/test
+        with:
+          os-name: ${{ matrix.os-name }}
+          python-version: ${{ matrix.python-version }}
+
+  # Clean EmoPack workspace & prepare release
+  install-release-prepare:
+    name: 💿/📀->📦
+    runs-on: ${{ matrix.os-name }}
+    needs: [install-test]
+
+    strategy:
+      matrix:
+        # one OS
+        os-name: [ubuntu-latest]
+        python-version: [3.8]
+
+    steps:
+      # checkout commit
+      - name: ✔️Checkout commit
+        uses: actions/checkout@v3.5.0
+      # install
+      - name: 💿Call Install
+        uses: ./.github/actions/install
+        with:
+          os-name: ${{ matrix.os-name }}
+          python-version: ${{ matrix.python-version }}
+
+      # get parent dir
+      - name: 📁Get Parent Directory
+        id: parentDir
+        uses: ./.github/actions/get-parent-dir
+
+      # Prepare AppVersion
+      - name: Prepare AppVersion
+        run: |
+          python ./resources/ci/common/prepare_appversion.py
+
+      # Prepare Manifest
+      - name: Prepare Manifest
+        run: |
+          python ./resources/ci/common/prepare_manifest.py
+
+      # Prepare Release
+      - name: 📀->📦Prepare Release
+        run: |
+          python ./resources/ci/common/prepare_release.py
+
+      # Cleanup Workspace
+      - name: 🧹Cleanup Workspace
+        run: |
+          python ./resources/ci/common/cleanup.py
+
+      # Upload AppVersion Artifact
+      - name: 🔼Upload AppVersion Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: appversion-${{ matrix.os-name }}
+          path: ${{ steps.parentDir.outputs.parentDir}}/build
+
+      # Upload Archive Artifact
+      - name: 🔼Upload Archive Artifact
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: archive-${{ matrix.os-name }}
+          path: ${{ steps.parentDir.outputs.parentDir}}/deploy
+
+  # Deploy to GitHub Releases
+  #  Release Name:  SpriteSomething v${GITHUB_TAG}
+  #  Release Body:  Inline content of RELEASENOTES.md
+  #  Release Body:  Fallback to URL to RELEASENOTES.md
+  #  Release Files: ../deploy
+  release-deploy:
+    name: 📀->🚀
+    runs-on: ${{ matrix.os-name }}
+
+    # VM settings
+    #  os & python versions
+    strategy:
+      matrix:
+        # release only on ubuntu
+        os-name: [ubuntu-latest]
+        python-version: [3.8]
+
+    needs: [install-release-prepare]
+    steps:
+      # checkout commit
+      - name: ✔️Checkout commit
+        uses: actions/checkout@v3.5.0
+
+      # install dependencies via pip
+      - name: 💿Install Dependencies via pip
+        shell: bash
+        run: |
+          python -m pip install pytz requests
+
+      # get parent dir
+      - name: 📁Get Parent Directory
+        id: parentDir
+        uses: ./.github/actions/get-parent-dir
+
+      # download appversion artifact
+      - name: 🔽Download AppVersion Artifact
+        uses: actions/download-artifact@v3.0.2
+        with:
+          name: appversion-${{ matrix.os-name }}
+          path: ${{ steps.parentDir.outputs.parentDir }}/build
+      # download archive artifact
+      - name: 🔽Download Archive Artifact
+        uses: actions/download-artifact@v3.0.2
+        with:
+          name: archive-${{ matrix.os-name }}
+          path: ${{ steps.parentDir.outputs.parentDir }}/deploy
+
+      # debug info
+      - name: 📝Debug Info
+        id: debug_info
+        #      shell: bash
+        #        git tag ${GITHUB_TAG}
+        #        git push origin ${GITHUB_TAG}
+        run: |
+          GITHUB_TAG="$(head -n 1 ../build/app_version.txt)"
+          echo "github_tag=$GITHUB_TAG" >> $GITHUB_OUTPUT
+          GITHUB_TAG="v${GITHUB_TAG}"
+          RELEASE_NAME="Axiom Verge EmoTracker Pack ${GITHUB_TAG}"
+          echo "Release Name: ${RELEASE_NAME}"
+          echo "Git Tag:      ${GITHUB_TAG}"
+
+      # create a release
+      - name: 📀->🚀Create a Release (MASTER)
+        id: create_release
+        uses: actions/create-release@v1.1.4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ steps.debug_info.outputs.github_tag }}
+          release_name: Axiom Verge EmoTracker Pack v${{ steps.debug_info.outputs.github_tag }}
+          body_path: RELEASENOTES.md
+          # draft: true
+        if: contains(github.ref, 'master')
+
+      # upload archive asset
+      - name: 🔼Upload Archive Asset (MASTER)
+        id: upload-asset
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ../deploy/averge_pack_mm1.zip
+          asset_name: averge_pack_mm1.zip
+          asset_content_type: application/zip
+        if: contains(github.ref, 'master')
+
+  # Update Pack Listing
+  update-packlisting:
+    name: Update Pack Listing
+    runs-on: ${{ matrix.os-name }}
+
+    # VM settings
+    #  os & python versions
+    strategy:
+      matrix:
+        # run only on ubuntu
+        os-name: [ubuntu-latest]
+        python-version: [3.8]
+
+    needs: [release-deploy]
+    steps:
+      # checkout commit
+      - name: ✔️Checkout commit
+        uses: actions/checkout@v3.5.0
+      - name: 💿Install Dependencies via pip
+        run: |
+          python -m pip install pytz requests
+
+      # get packlisting destination
+      - name: Get Pack Listing Destination
+        id: packlisting
+        run: |
+          PACKLISTING_USERNAME="$([[ $(head -n 1 ./resources/app/meta/manifests/repository.txt) =~ ([^\/]*)\/([^:]*)\:(.*) ]] && echo ${BASH_REMATCH[1]})"
+          echo "packlisting_username=$PACKLISTING_USERNAME" >> $GITHUB_OUTPUT
+
+          PACKLISTING_REPOSITORY="$([[ $(head -n 1 ./resources/app/meta/manifests/repository.txt) =~ ([^\/]*)\/([^:]*)\:(.*) ]] && echo ${BASH_REMATCH[2]})"
+          echo "packlisting_repository=$PACKLISTING_REPOSITORY" >> $GITHUB_OUTPUT
+
+          PACKLISTING_BRANCH="$([[ $(head -n 1 ./resources/app/meta/manifests/repository.txt) =~ ([^\/]*)\/([^:]*)\:(.*) ]] && echo ${BASH_REMATCH[3]})"
+          echo "packlisting_branch=$PACKLISTING_BRANCH" >> $GITHUB_OUTPUT
+
+          echo "Pack Listing Username:    $PACKLISTING_USERNAME"
+          echo "Pack Listing Repository:  $PACKLISTING_REPOSITORY"
+          echo "Pack Listing Branch:      $PACKLISTING_BRANCH"
+          echo "Pack Listing Destination: $PACKLISTING_USERNAME/$PACKLISTING_REPOSITORY@refs/heads/$PACKLISTING_BRANCH"
+
+      # Update EmoTracker Pack Repository
+      - name: Update EmoTracker Pack Repository (MASTER)
+        id: update-pack-repo
+        uses: benc-uk/workflow-dispatch@v1.2.2
+        with:
+          workflow: 🌎->🚀Deploy Pages
+          repo: ${{ steps.packlisting.outputs.packlisting_username }}/${{ steps.packlisting.outputs.packlisting_repository }}
+          ref: ${{ steps.packlisting.outputs.packlisting_branch }}
+          token: ${{ secrets.MY_PAT }}
+        if: contains(github.ref, 'master')

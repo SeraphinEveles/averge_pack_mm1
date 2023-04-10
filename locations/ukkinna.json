@@ -4,12 +4,20 @@
     "name": "Ukkin-Na",
     "color": "#015EA5",
     "parent": "Sudra",
+    "access_rules": [ // Eribu -> Ukkin-Na
+      "@Eribu -> Ukkin-Na/Connection"
+    ],
     "children": [
       // Turbine Pulse
       {
         "name": "Turbine Pulse",
         "short_name": "Turbine Pulse",
-        "access_rules": [ ],
+        "vgravmap": "TriCone",
+        "access_rules": [
+          "deadvision,$canAirport3",
+          "deadvision,$canEnhancedDroneLaunch",
+          "deadvision,$canDroneTeleport"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -33,7 +41,11 @@
       {
         "name": "Rusalka Tablet (Ukkin-Na top)",
         "short_name": "Rusalka Tablet (Ukkin-Na ^)",
-        "access_rules": [ ],
+        "access_rules": [
+          "deadvision,$canTeleport3",
+          "deadvision,highjump,grapple",
+          "deadvision,$canDroneTeleport"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -57,7 +69,11 @@
       {
         "name": "Health Node Fragment (Ukkin-Na top)",
         "short_name": "Health Node Fragment (Ukkin-Na ^)",
-        "access_rules": [ ],
+        "access_rules": [
+          "deadvision,$canTeleport2,highjump,$canUseRemoteDrone",
+          "deadvision,$canTeleport2,$canDroneTeleport",
+          "deadvision,$canTeleport3,$canUseRemoteDrone"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -81,7 +97,11 @@
       {
         "name": "Power Node Fragment (Ukkin-Na top)",
         "short_name": "Power Node Fragment (Ukkin-Na ^)",
-        "access_rules": [ ],
+        "access_rules": [
+          "deadvision,$canTeleport2,$canDroneTeleport,$canGlitchGun2",
+          "deadvision,$canTeleport3,$canUseRemoteDrone",
+          "deadvision,highjump,$canGlitchGun2,$canUseRemoteDrone"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -105,7 +125,12 @@
       {
         "name": "Health Node (Ukkin-Na)",
         "short_name": "Health Node (Ukkin-Na)",
-        "access_rules": [ ],
+        "vgravmap": "HealthNode6",
+        "access_rules": [
+          "deadvision,$canTeleport3",
+          "deadvision,highjump",
+          "deadvision,$canDroneTeleport"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -129,7 +154,12 @@
       {
         "name": "Trenchcoat",
         "short_name": "Trenchcoat",
-        "access_rules": [ ],
+        "vgravmap": "BlackCoat",
+        "access_rules": [
+          "$canTeleport3",
+          "highjump",
+          "$canDroneTeleport"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -153,7 +183,11 @@
       {
         "name": "Power Node Fragment (Ukkin-Na middle)",
         "short_name": "Power Node Fragment (Ukkin-Na =)",
-        "access_rules": [ ],
+        "access_rules": [
+          "$canAirport2,highjump",
+          "$canAirport2,$canDroneTeleport",
+          "$canAirport3"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -169,7 +203,8 @@
         "sections": [
           {
             "name": "Item",
-            "item_count": 1
+            "item_count": 1,
+            "capture_item": true
           }
         ]
       },
@@ -177,7 +212,12 @@
       {
         "name": "Digital Paper (Ukkin-Na)",
         "short_name": "Digital Paper (Ukkin-Na)",
-        "access_rules": [ ],
+        "access_rules": [
+          "deadvision,$canAirport2,highjump,$canUseRemoteDrone",
+          "deadvision,$canAirport2,$canDroneTeleport",
+          "deadvision,$canAirport2,grapple,$canUseRemoteDrone",
+          "deadvision,$canAirport3,$canUseRemoteDrone"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -201,7 +241,6 @@
       {
         "name": "Rusalka Tablet (Ukkin-Na bottom) (2 items)",
         "short_name": "Rusalka Tablet (Ukkin-Na v) (2 items)",
-        "access_rules": [ ],
         "map_locations": [
           {
             "map": "sudra",
@@ -216,20 +255,36 @@
         ],
         "sections": [
           {
-            "name": "Item 1",
-            "item_count": 1
+            "name": "Upper",
+            "item_count": 1,
+            "access_rules": [
+              "{wave}",
+              "$canAirport2,highjump",
+              "$canAirport3"
+            ],
+            "capture_item": true
           },
           {
-            "name": "Item 2",
-            "item_count": 1
+            "name": "Lower",
+            "item_count": 1,
+            "access_rules": [
+              "$canAirport2,highjump",
+              "highjump,$canGlitchGun1,grapple",
+              "highjump,$canGlitchGun1,$canUseRemoteDrone",
+              "$canDroneTeleport"
+             ]
           }
         ]
       },
-      // Power Node Fragment (bottom)
+      // Power Node Fragment (Ukkin-Na bottom)
       {
-        "name": "Power Node Fragment (bottom)",
-        "short_name": "Power Node Fragment (v)",
-        "access_rules": [ ],
+        "name": "Power Node Fragment (Ukkin-Na bottom)",
+        "short_name": "Power Node Fragment (Ukkin-Na v)",
+        "access_rules": [
+          "$canTeleport2,highjump,$canGlitchGun1,$canShootLong",
+          "$canTeleport2,$canDroneTeleport,$canGlitchGun1,$canShootLong",
+          "$canTeleport3"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -244,7 +299,7 @@
         ],
         "sections": [
           {
-            "name": "Item",
+            "name": "Through Floor",
             "item_count": 1
           }
         ]

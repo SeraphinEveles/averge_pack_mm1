@@ -3,13 +3,30 @@
   {
     "name": "Zi",
     "color": "#2933FD",
-    "parent": "sudra",
+    "parent": "Sudra",
+    "access_rules": [ // Eribu -> Absu, Absu -> Zi
+      "@Absu -> Zi/Connection"
+    ],
     "children": [
       // Power Node Fragment (Zi top) #1
       {
         "name": "Power Node Fragment (Zi top) #1",
         "short_name": "Power Node Fragment (Zi ^) #1",
-        "access_rules": [],
+        "vgravmap": "PowerNodeFragment1",
+        "access_rules": [
+          "$canAirport2,$canGlitchGun1",
+          "$canAirport2,highjump,$canDroneTeleport,grapple",
+          "$canAirport3,$canDroneTeleport,grapple",
+          "highjump,$canGlitchGun1,grapple",
+          "$canDroneTeleport,$canGlitchGun1,grapple",
+          "highjump,$canEnhancedDroneLaunch,$canAirport2",
+          "$canEnhancedDroneLaunch,$canAirport3",
+          "$canAirport3,grapple",
+          "[progadvanced],$canEnhancedDroneLaunch,$canAirport2",
+          "[progadvanced],$canGlitchGun1,grapple,excavate",
+          "[progadvanced],$canDroneTeleport",
+          "[progmasochist],$canGlitchGun1,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -33,7 +50,15 @@
       {
         "name": "Health Node (Zi)",
         "short_name": "Health Node (Zi)",
-        "access_rules": [],
+        "vgravmap": "HealthNode3",
+        "access_rules": [
+          "$canTeleport1,highjump,$canGlitchGun1",
+          "$canAirport2,$canGlitchGun1",
+          "[progadvanced],highjump,$canAirport2",
+          "[progadvanced],$canGlitchGun1,highjump,grapple",
+          "[progadvanced],$canDroneTeleport",
+          "[progmasochist],$canGlitchGun1,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -57,7 +82,16 @@
       {
         "name": "Modified Lab Coat",
         "short_name": "Modified Lab Coat",
-        "access_rules": [],
+        "vgravmap": "GlitchTeleport",
+        "access_rules": [
+          "$canAirport2",
+          "highjump,$canGlitchGun1",
+          "$canGlitchGun1,highjump,coat",
+          "[progadvanced],$canDroneTeleport",
+          "[progadvanced],$canGlitchGun1,$canTeleport1",
+          "[progadvanced],$canGlitchGun1,highjump,grapple",
+          "[progmasochist],$canGlitchGun1,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -77,11 +111,48 @@
           }
         ]
       },
+      // Uruku
+      {
+        "name": "Uruku",
+        "short_name": "Uruku",
+        "vgravmap": "",
+        "access_rules": [
+          "@Modified Lab Coat/Item"
+        ],
+        "map_locations": [
+          {
+            "map": "sudra",
+            "x": 801,
+            "y": 927
+          },
+          {
+            "map": "zi",
+            "x": 352,
+            "y": 152
+          }
+        ],
+        "sections": [
+          {
+            "name": "Boss",
+            "item_count": 1,
+            "chest_unavailable_img": "images/chests/boss_unavailable.png",
+            "chest_unopened_img": "images/chests/boss_unopened.png",
+            "chest_opened_img": "images/chests/boss_opened.png"
+          }
+        ]
+      },
       // Digital Paper Zi #1
       {
         "name": "Digital Paper (Zi) #1",
         "short_name": "Digital Paper (Zi) #1",
-        "access_rules": [],
+        "vgravmap": "Note10",
+        "access_rules": [
+          "$canAirport2,excavate",
+          "$canAirport3",
+          "highjump,excavate",
+          "[progadvanced],excavate,grapple",
+          "[progadvanced],$canDroneTeleport"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -105,7 +176,15 @@
       {
         "name": "Health Node Fragment (Zi) #1",
         "short_name": "Health Node Fragment (Zi) #1",
-        "access_rules": [],
+        "vgravmap": "HealthNodeFragment7",
+        "access_rules": [
+          "{highjump}",
+          "{$canUseRemoteDrone}",
+          "$canTeleport1,highjump",
+          "$canTeleport2",
+          "[progadvanced],$canTeleport1,$canDroneTeleport",
+          "[progmasochist],grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -121,7 +200,8 @@
         "sections": [
           {
             "name": "Item",
-            "item_count": 1
+            "item_count": 1,
+            "capture_item": true
           }
         ]
       },
@@ -129,7 +209,10 @@
       {
         "name": "Rusalka Tablet (Zi)",
         "short_name": "Rusalka Tablet (Zi)",
-        "access_rules": [],
+        "vgravmap": "Note20",
+        "access_rules": [
+          "$canUseRemoteDrone"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -138,7 +221,7 @@
           },
           {
             "map": "zi",
-            "x": 208,
+            "x": 226,
             "y": 224
           }
         ],
@@ -153,7 +236,10 @@
       {
         "name": "Voranj",
         "short_name": "Voranj",
-        "access_rules": [],
+        "vgravmap": "Voranj",
+        "access_rules": [
+          "$canUseRemoteDrone"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -177,7 +263,17 @@
       {
         "name": "Power Node Fragment (Zi) #2",
         "short_name": "Power Node Fragment (Zi) #2",
-        "access_rules": [],
+        "vgravmap": "PowerNodeFragment8",
+        "access_rules": [
+          "$canAirport2,highjump",
+          "$canGlitchGun2,highjump",
+          "$canGlitchGun2,$canUseRemoteDrone",
+          "$canGlitchGun2,grapple",
+          "$canTeleport1,$canGlitchGun2,highjump",
+          "$canAirport2,$canGlitchGun2",
+          "[progadvanced],$canAirport2",
+          "[progmasochist],grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -201,7 +297,14 @@
       {
         "name": "Size Node (Zi)",
         "short_name": "Size Node (Zi)",
-        "access_rules": [],
+        "vgravmap": "SizeNode3",
+        "access_rules": [
+          "$canTeleport2",
+          "highjump",
+          "excavate,grapple",
+          "[progadvanced],$canDroneTeleport",
+          "[progmasochist],grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -216,7 +319,7 @@
         ],
         "sections": [
           {
-            "name": "Item",
+            "name": "Hidden Wall",
             "item_count": 1
           }
         ]
@@ -225,7 +328,14 @@
       {
         "name": "Bioflux Accelerator #1",
         "short_name": "Bioflux Accelerator #1",
-        "access_rules": [],
+        "vgravmap": "TendrilsTop",
+        "access_rules": [
+          "$canAirport2",
+          "highjump",
+          "[progadvanced],$canDroneTeleport",
+          "[progmasochist],highjump,grapple",
+          "[progmasochist],$canAirport2,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -249,7 +359,14 @@
       {
         "name": "Health Node Fragment (Zi middle)",
         "short_name": "Health Node Fragment (Zi =)",
-        "access_rules": [],
+        "vgravmap": "HealthNodeFragment5",
+        "access_rules": [
+          "$canTeleport2",
+          "$canUseRemoteDrone",
+          "[progadvanced],grapple,$canUseRemoteDrone",
+          "[progadvanced],$canDroneTeleport",
+          "[progmasochist],grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -264,7 +381,7 @@
         ],
         "sections": [
           {
-            "name": "Item",
+            "name": "Hidden Wall",
             "item_count": 1
           }
         ]
@@ -273,7 +390,14 @@
       {
         "name": "Health Node Fragment (Zi bottom)",
         "short_name": "Health Node Fragment (Zi v)",
-        "access_rules": [],
+        "vgravmap": "HealthNodeFragement14",
+        "access_rules": [
+          "$canAirport2,excavate",
+          "highjump,excavate",
+          "[progadvanced],$canUseRemoteDrone,highjump,grapple",
+          "[progadvanced],$canDroneTeleport",
+          "[progmasochist],excavate,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -297,7 +421,13 @@
       {
         "name": "Range Node (Zi)",
         "short_name": "Range Node (Zi)",
-        "access_rules": [],
+        "vgravmap": "RangeNode2",
+        "access_rules": [
+          "$canTeleport1,highjump",
+          "$canAirport2",
+          "[progadvanced],$canTeleport1,$canDroneTeleport",
+          "[progmasochist],$canTeleport1,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -312,7 +442,7 @@
         ],
         "sections": [
           {
-            "name": "Item",
+            "name": "Hidden Wall",
             "item_count": 1
           }
         ]
@@ -321,7 +451,11 @@
       {
         "name": "Passcode Tool",
         "short_name": "Passcode Tool",
-        "access_rules": [],
+        "vgravmap": "PasswordTool",
+        "access_rules": [
+          "$canAirport2",
+          "[progadvanced],$canUseRemoteDrone"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -345,7 +479,11 @@
       {
         "name": "Digital Paper (Zi) #2",
         "short_name": "Digital Paper (Zi) #2",
-        "access_rules": [],
+        "vgravmap": "Note19",
+        "access_rules": [
+          "$canAirport2",
+          "[progadvanced],$canUseRemoteDrone"
+        ],
         "map_locations": [
           {
             "map": "sudra",

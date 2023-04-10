@@ -4,12 +4,21 @@
     "name": "Absu",
     "color": "#6B09AE",
     "parent": "Sudra",
+    "access_rules": [ // Eribu -> Absu
+      "@Eribu -> Absu/Connection"
+    ],
     "children": [
       // Health Node Fragment (Absu top)
       {
         "name": "Health Node Fragment (Absu top)",
         "short_name": "Health Node Fragment (Absu)",
-        "access_rules": [ ],
+        "vgravmap": "HealthNodeFragment6",
+        "access_rules": [
+          "$canTeleport1,$canGlitchGun1,grapple",
+          "$canAirport2",
+          "[progadvanced],$canDroneTeleport",
+          "[progmasochist],grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -29,11 +38,18 @@
           }
         ]
       },
-      // Power Node Fragment (Absu top 1)
+      // Power Node Fragment (Attic 3)
       {
-        "name": "Power Node Fragment (Absu top 1)",
-        "short_name": "Power Node Fragment (Absu ^ 1)",
-        "access_rules": [ ],
+        "name": "Power Node Fragment (Attic 3)",
+        "short_name": "Power Node Fragment (Attic 3)",
+        "vgravmap": "PowerNodeFragment5",
+        "access_rules": [
+          "$canAirport2,highjump,$canGlitchGun2",
+          "$canGlitchGun2,$canUseRemoteDrone",
+          "grapple,$canGlitchGun2",
+          "[progadvanced],$canGlitchGun2,$canAirport3",
+          "[progmasochist],$canGlitchGun2,$canAirport2"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -53,11 +69,23 @@
           }
         ]
       },
-      // Power Node Fragment (Absu top 2)
+      // Power Node Fragment (Attic 4)
       {
-        "name": "Power Node Fragment (Absu top 2)",
-        "short_name": "Power Node Fragment (Absu ^ 2)",
-        "access_rules": [ ],
+        "name": "Power Node Fragment (Attic 4)",
+        "short_name": "Power Node Fragment (Attic 4)",
+        "vgravmap": "PowerNodefragment6",
+        "access_rules": [
+          "$canAirport2,highjump,$canGlitchBomb",
+          "$canAirport3,$canGlitchBomb",
+          "highjump,$canGlitchGun2,$canUseRemoteDrone",
+          "grapple,$canGlitchBomb",
+          "$canUseRemoteDrone,$canEnhancedDroneLaunch,$canGlitchGun2",
+          "$canAirport2,$canGlitchGun2,$canUseRemoteDrone",
+          "[progadvanced],highjump,$canGlitchGun2,$canAirport2",
+          "[progadvanced],$canGlitchGun2,grapple,$canAirport2",
+          "[progadvanced],$canGlitchGun2,$canAirport3",
+          "[progmasochist],$canGlitchGun2,grapple,$canAirport2"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -77,11 +105,20 @@
           }
         ]
       },
-      // Power Node Fragment (Absu top 3)
+      // Power Node Fragment (Attic 1)
       {
-        "name": "Power Node Fragment (Absu top 3)",
-        "short_name": "Power Node Fragment (Absu ^ 3)",
-        "access_rules": [ ],
+        "name": "Power Node Fragment (Attic 1)",
+        "short_name": "Power Node Fragment (Attic 1)",
+        "vgravmap": "PowerNodeFragment3",
+        "access_rules": [
+          "$canAirport2,highjump",
+          "$canAirport3",
+					"$canUseRemoteDrone",
+          "excavate,grapple",
+          "[progmasochist],excavate,$canAirport2",
+          "[progmasochist],grapple,$canAirport2",
+          "[progmasochist],grapple,$canGlitchBomb"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -101,11 +138,19 @@
           }
         ]
       },
-      // Power Node Fragment (Absu top 4)
+      // Power Node Fragment (Attic 2)
       {
-        "name": "Power Node Fragment (Absu top 4)",
-        "short_name": "Power Node Fragment (Absu ^ 4)",
-        "access_rules": [ ],
+        "name": "Power Node Fragment (Attic 2)",
+        "short_name": "Power Node Fragment (Attic 2)",
+        "vgravmap": "PowerNodeFragment4",
+        "access_rules": [
+          "$canTeleport2,highjump,$canGlitchBomb",
+          "$canTeleport3,$canGlitchBomb",
+          "$canDroneTeleport,$canGlitchBomb",
+          "grapple,$canGlitchBomb",
+          "[progadvanced],$canAirport2,$canGlitchBomb",
+          "[progmasochist],grapple,$canGlitchBomb"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -129,7 +174,14 @@
       {
         "name": "Health Node Fragment (Absu middle 1)",
         "short_name": "Health Node Fragment (Absu = 1)",
-        "access_rules": [ ],
+        "vgravmap": "HealthNodeFragment4",
+        "access_rules": [
+          "{excavate}",
+          "$canTeleport1",
+          "wave",
+          "[progmasochist],excavate,grapple",
+          "[progmasochist],grapple,$canGlitchBomb"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -145,7 +197,8 @@
         "sections": [
           {
             "name": "Item",
-            "item_count": 1
+            "item_count": 1,
+            "capture_item": true
           }
         ]
       },
@@ -153,7 +206,10 @@
       {
         "name": "Health Node Fragment (Absu middle 2)",
         "short_name": "Health Node Fragment (Absu = 2)",
-        "access_rules": [ ],
+        "vgravmap": "HealthNodeFragment1",
+        "access_rules": [
+          "excavate"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -177,7 +233,13 @@
       {
         "name": "Address Disruptor 1",
         "short_name": "Address Disruptor 1",
-        "access_rules": [ ],
+        "vgravmap": "AddressDisruptor1",
+        "access_rules": [
+          "$canTeleport1",
+          "wave",
+          "[progadvanced],$canDroneTeleport",
+          "[progmasochist],grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -197,11 +259,47 @@
           }
         ]
       },
+      // Telal
+      {
+        "name": "Telal",
+        "short_name": "Telal",
+        "vgravmap": "",
+        "access_rules": [
+          "@Address Disruptor 1/Item"
+        ],
+        "map_locations": [
+          {
+            "map": "sudra",
+            "x": 441,
+            "y": 963
+          },
+          {
+            "map": "absu",
+            "x": 342,
+            "y": 179
+          }
+        ],
+        "sections": [
+          {
+            "name": "Boss",
+            "item_count": 1,
+            "chest_unavailable_img": "images/chests/boss_unavailable.png",
+            "chest_unopened_img": "images/chests/boss_unopened.png",
+            "chest_opened_img": "images/chests/boss_opened.png"
+          }
+        ]
+      },
       // Power Node Fragment (Absu middle left)
       {
         "name": "Power Node Fragment (Absu middle left)",
         "short_name": "Power Node Fragment (Absu <=)",
-        "access_rules": [ ],
+        "vgravmap": "PowerNodeFragment7",
+        "access_rules": [
+          "$canTeleport1,$canGlitchGun1",
+          "$canTeleport3",
+          "$canGlitchGun1,wave",
+          "$canGlitchGun1,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -225,7 +323,11 @@
       {
         "name": "Kilver",
         "short_name": "Kilver",
-        "access_rules": [ ],
+        "vgravmap": "Kilver",
+        "access_rules": [
+          "excavate",
+          "[progmasochist],grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -249,7 +351,14 @@
       {
         "name": "Health Node (Absu)",
         "short_name": "Health Node (Absu)",
-        "access_rules": [ ],
+        "vgravmap": "HealthNode2",
+        "access_rules": [
+          "$canTeleport2",
+          "wave,$canGlitchGun1",
+          "$canGlitchGun1,$canTeleport1",
+          "$canDroneTeleport",
+          "grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -273,7 +382,15 @@
       {
         "name": "Inertial Pulse",
         "short_name": "Inertial Pulse",
-        "access_rules": [ ],
+        "vgravmap": "IntertialPulse",
+        "access_rules": [
+          "$canAirport3",
+          "$canGlitchGun2,excavate,highjump",
+          "excavate,$canGlitchGun2,wave",
+          "excavate,$canTeleport1,$canGlitchGun2",
+          "[progadvanced],$canDroneTeleport,$canGlitchGun2",
+          "[progmasochist],excavate,$canGlitchGun2,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -297,7 +414,10 @@
       {
         "name": "Digital Paper (Absu top)",
         "short_name": "Digital Paper (Absu ^)",
-        "access_rules": [ ],
+        "vgravmap": "Note16",
+        "access_rules": [
+          "$canUseRemoteDrone"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -321,7 +441,14 @@
       {
         "name": "Rusalka Tablet (Absu top right)",
         "short_name": "Rusalka Tablet (Absu ^>)",
-        "access_rules": [ ],
+        "vgravmap": "Note24",
+        "access_rules": [
+          "$canTeleport2",
+          "wave,$canGlitchGun1",
+          "$canGlitchGun1,$canTeleport1",
+          "[progadvanced],$canDroneTeleport",
+          "[progmasochist],excavate,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -345,7 +472,12 @@
       {
         "name": "Rusalka Tablet (Absu top left)",
         "short_name": "Rusalka Tablet (Absu <^)",
-        "access_rules": [ ],
+        "vgravmap": "Note14",
+        "access_rules": [
+          "{wave}",
+          "$canTeleport1",
+          "[progmasochist],grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -361,7 +493,8 @@
         "sections": [
           {
             "name": "Item",
-            "item_count": 1
+            "item_count": 1,
+            "capture_item": true
           }
         ]
       },
@@ -369,7 +502,15 @@
       {
         "name": "Size Node (Absu)",
         "short_name": "Size Node (Absu)",
-        "access_rules": [ ],
+        "vgravmap": "SizeNode2",
+        "access_rules": [
+          "$canTeleport2",
+          "wave,$canGlitchGun1",
+          "$canGlitchGun1,$canTeleport1",
+          "[progadvanced],$canDroneTeleport",
+          "[progmasochist],excavate,grapple",
+          "[progmasochist],$canGlitchGun1,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -393,7 +534,16 @@
       {
         "name": "Health Node Fragment (Absu bottom)",
         "short_name": "Health Node Fragment (Absu v)",
-        "access_rules": [ ],
+        "vgravmap": "HealthNodeFragment3",
+        "access_rules": [
+          "$canTeleport1,$canGlitchGun1",
+          "$canTeleport2",
+          "wavelong,$canGlitchGun1",
+          "[progadvanced],$canGlitchGun1,$canDroneTeleport",
+          "[progadvanced],$canTeleport1,$canDroneTeleport",
+          "[progadvanced],$canDroneTeleport,wavelong",
+          "[progmasochist],excavate,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -417,7 +567,10 @@
       {
         "name": "Data Bomb",
         "short_name": "Data Bomb",
-        "access_rules": [ ],
+        "vgravmap": "DataGrenade",
+        "access_rules": [
+          "$canTeleport2,$canDroneTeleport"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -441,7 +594,11 @@
       {
         "name": "Range Node (Absu left)",
         "short_name": "Range Node (Absu <)",
-        "access_rules": [ ],
+        "access_rules": [
+          "$canTeleport1,$canGlitchGun2,$canUseRemoteDrone",
+          "$canTeleport1,$canGlitchBomb,$canUseRemoteDrone",
+          "[progmasochist],grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -465,7 +622,19 @@
       {
         "name": "Digital Paper (Absu bottom)",
         "short_name": "Digital Paper (Absu v)",
-        "access_rules": [ ],
+        "vgravmap": "Note15",
+        "access_rules": [
+          "{wave}",
+          "{$canTeleport1}",
+          "$canTeleport2",
+          "$canGlitchBomb",
+          "highjump,grapple",
+          "wave,$canGlitchGun1",
+          "$canGlitchGun1,$canTeleport1",
+          "[progadvanced],$canDroneTeleport",
+          "[progmasochist],highjump",
+          "[progmasochist],grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -481,7 +650,12 @@
         "sections": [
           {
             "name": "Item",
-            "item_count": 1
+            "access_rules": [
+              "$canGlitchGun1",
+              "highjump"
+            ],
+            "item_count": 1,
+            "capture_item": true
           }
         ]
       },
@@ -489,7 +663,16 @@
       {
         "name": "Range Node (Absu right)",
         "short_name": "Range Node (Absu >)",
-        "access_rules": [ ],
+        "vgravmap": "RangeNode1",
+        "access_rules": [
+          "$canGlitchGun1,$canUseRemoteDrone",
+          "$canAirport2",
+          "wave,$canGlitchGun1,$canUseRemoteDrone",
+          "wave,$canGlitchGun1,highjump,$canTeleport1",
+          "[progadvanced],$canDroneTeleport",
+          "[progadvanced],$canUseRemoteDrone,grapple",
+          "[progmasochist],grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -513,7 +696,18 @@
       {
         "name": "Rusalka Tablet (Absu bottom right)",
         "short_name": "Rusalka Tablet (Absu v>)",
-        "access_rules": [ ],
+        "vgravmap": "Note28",
+        "access_rules": [
+          "{wave,$canGlitchGun1}",
+          "{$canTeleport1,$canGlitchGun1}",
+          "{$canTeleport2}",
+          "$canTeleport1,$canGlitchGun1,$canUseRemoteDrone",
+          "$canTeleport2,$canUseRemoteDrone",
+          "wave,$canGlitchGun1,$canUseRemoteDrone",
+          "$canTeleport3",
+          "[progadvanced],$canDroneTeleport",
+          "[progmasochist],$canUseRemoteDrone,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -529,7 +723,8 @@
         "sections": [
           {
             "name": "Item",
-            "item_count": 1
+            "item_count": 1,
+            "capture_item": true
           }
         ]
       },
@@ -537,7 +732,14 @@
       {
         "name": "Power Node (Absu)",
         "short_name": "Power Node (Absu)",
-        "access_rules": [ ],
+        "vgravmap": "PowerNode2",
+        "access_rules": [
+          "$canTeleport1,$canGlitchGun1",
+          "$canTeleport2",
+          "wave,$canGlitchGun1",
+          "[progadvanced],$canDroneTeleport",
+          "[progmasochist],excavate,grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -553,7 +755,8 @@
         "sections": [
           {
             "name": "Item",
-            "item_count": 1
+            "item_count": 1,
+            "capture_item": true
           }
         ]
       },
@@ -561,7 +764,15 @@
       {
         "name": "Power Node Fragment (Absu bottom)",
         "short_name": "Power Node Fragment (Absu v)",
-        "access_rules": [ ],
+        "vgravmap": "PowerNodeFragment9",
+        "access_rules": [
+          "$canAirport2,highjump",
+          "$canAirport2,grapple",
+          "$canAirport2,$canDroneTeleport",
+          "$canAirport3",
+          "[progadvanced],$canAirport2",
+          "[progmasochist],grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
@@ -585,7 +796,11 @@
       {
         "name": "Rusalka Tablet (Absu bottom left)",
         "short_name": "Rusalka Tablet (Absu <v)",
-        "access_rules": [ ],
+        "vgravmap": "Note7",
+        "access_rules": [
+          "$canTeleport1",
+          "[progmasochist],grapple"
+        ],
         "map_locations": [
           {
             "map": "sudra",
