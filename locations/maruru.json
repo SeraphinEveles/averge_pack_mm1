@@ -10,8 +10,8 @@
     "children": [
       // Digital Paper (Mar-Uru top)
       {
-        "name": "Digital Paper (Mar-Uru top)",
-        "short_name": "Digital Paper (Mar-Uru ^)",
+        "name": "Note (bossfoyershaft): Mar-Uru - Athetos Ascent Drone Tunnel",
+        "short_name": "Note (bossfoyershaft): Mar-Uru - Athetos Ascent Drone Tunnel",
         "access_rules": [
           "$canTeleport3,$canEnhancedDroneLaunch,$canDroneTeleport,highjump"
         ],
@@ -36,8 +36,8 @@
       },
       // Digital Paper (Mar-Uru bottom)
       {
-        "name": "Digital Paper (Mar-Uru bottom)",
-        "short_name": "Digital Paper (Mar-Uru v)",
+        "name": "Note (blueandpurplecorridor): Mar-Uru - Before Laser Bot Puzzle",
+        "short_name": "Note (blueandpurplecorridor): Mar-Uru - Before Laser Bot Puzzle",
         "access_rules": [
           "$canTeleport3,$canEnhancedDroneLaunch,$canDroneTeleport,highjump"
         ],
@@ -62,8 +62,8 @@
       },
       // Reverse Slicer
       {
-        "name": "Reverse Slicer",
-        "short_name": "Reverse Slicer",
+        "name": "Reverse Slicer: Mar-uru - Laser Bot Puzzle",
+        "short_name": "Reverse Slicer: Mar-uru - Laser Bot Puzzle",
         "vgravmap": "Scythe",
         "access_rules": [
           "$canTeleport3,$canGlitchGun1,$canEnhancedDroneLaunch,$canDroneTeleport,highjump",
@@ -90,8 +90,8 @@
       },
       // Size Node (Mar-Uru)
       {
-        "name": "Size Node (Mar-Uru)",
-        "short_name": "Size Node (Mar-Uru)",
+        "name": "Size node (hybridroom): Mar-Uru - Inside Corridor Block",
+        "short_name": "Size node (hybridroom): Mar-Uru - Inside Corridor Block",
         "vgravmap": "SizeNode4",
         "access_rules": [
           "$canTeleport3,$canEnhancedDroneLaunch,$canDroneTeleport,highjump"
@@ -117,8 +117,8 @@
       },
       // Health Node (Mar-Uru)
       {
-        "name": "Health Node (Mar-Uru)",
-        "short_name": "Health Node (Mar-Uru)",
+        "name": "Health node (biofluxshaft1): Mar-uru - Sentinel Reward",
+        "short_name": "Health node (biofluxshaft1): Mar-uru - Sentinel Reward",
         "vgravmap": "HealthNode8",
         "access_rules": [
           "$canTeleport3,$canEnhancedDroneLaunch,$canDroneTeleport,highjump"
@@ -144,8 +144,8 @@
       },
       // Power Node Fragment (Mar-Uru top)
       {
-        "name": "Power Node Fragment (Mar-Uru top)",
-        "short_name": "Power Node Fragment (Mar-Uru ^)",
+        "name": "Power node fragment (bioflux2secret)(1): Mar-Uru - Quantum Sentry",
+        "short_name": "Power node fragment (bioflux2secret)(1): Mar-Uru - Quantum Sentry",
         "access_rules": [
           "$canTeleport3,$canGlitchGun1,$canEnhancedDroneLaunch,$canDroneTeleport,highjump"
         ],
@@ -170,8 +170,8 @@
       },
       // Clay Tablet (Mar-Uru) (2 items)
       {
-        "name": "Clay Tablet (Mar-Uru) (2 items)",
-        "short_name": "Clay Tablet (Mar-Uru) (2 items)",
+        "name": "Quantum Sentry Basement (2 items)",
+        "short_name": "Quantum Sentry Basement (2 items)",
         "access_rules": [
           "$canTeleport3,$canGlitchGun1,$canEnhancedDroneLaunch,$canDroneTeleport,highjump"
         ],

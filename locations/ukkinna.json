@@ -10,8 +10,8 @@
     "children": [
       // Turbine Pulse
       {
-        "name": "Turbine Pulse",
-        "short_name": "Turbine Pulse",
+        "name": "Turbine Pulse: Ukkin-Na - Above Vision Room",
+        "short_name": "Turbine Pulse: Ukkin-Na - Above Vision Room",
         "vgravmap": "TriCone",
         "access_rules": [
           "deadvision,$canAirport3",
@@ -39,8 +39,8 @@
       },
       // Rusalka Tablet (Ukkin-Na top)
       {
-        "name": "Rusalka Tablet (Ukkin-Na top)",
-        "short_name": "Rusalka Tablet (Ukkin-Na ^)",
+        "name": "Note (opheliasattic): Ukkin-Na - Above Ophelia",
+        "short_name": "Note (opheliasattic): Ukkin-Na - Above Ophelia",
         "access_rules": [
           "deadvision,$canTeleport3",
           "deadvision,highjump,grapple",
@@ -67,8 +67,8 @@
       },
       // Health Node Fragment (Ukkin-Na top)
       {
-        "name": "Health Node Fragment (Ukkin-Na top)",
-        "short_name": "Health Node Fragment (Ukkin-Na ^)",
+        "name": "Health node fragment (bossroom): Ukkin-Na - Vision Room Tunnel",
+        "short_name": "Health node fragment (bossroom): Ukkin-Na - Vision Room Tunnel",
         "access_rules": [
           "deadvision,$canTeleport2,highjump,$canUseRemoteDrone",
           "deadvision,$canTeleport2,$canDroneTeleport",
@@ -95,8 +95,8 @@
       },
       // Power Node Fragment (Ukkin-Na top)
       {
-        "name": "Power Node Fragment (Ukkin-Na top)",
-        "short_name": "Power Node Fragment (Ukkin-Na ^)",
+        "name": "Power node fragment (livingroomofillusion): Ukkin-Na - Secret Room Below Upper Save",
+        "short_name": "Power node fragment (livingroomofillusion): Ukkin-Na - Secret Room Below Upper Save",
         "access_rules": [
           "deadvision,$canTeleport2,$canDroneTeleport,$canGlitchGun2",
           "deadvision,$canTeleport3,$canUseRemoteDrone",
@@ -123,8 +123,8 @@
       },
       // Health Node (Ukkin-Na)
       {
-        "name": "Health Node (Ukkin-Na)",
-        "short_name": "Health Node (Ukkin-Na)",
+        "name": "Health node (leftlegshaft): Ukkin-Na - Outside Ophelia",
+        "short_name": "Health node (leftlegshaft): Ukkin-Na - Outside Ophelia",
         "vgravmap": "HealthNode6",
         "access_rules": [
           "deadvision,$canTeleport3",
@@ -152,8 +152,8 @@
       },
       // Trenchcoat
       {
-        "name": "Trenchcoat",
-        "short_name": "Trenchcoat",
+        "name": "Trenchcoat: Ukkin-Na - Midway Shaft Upper",
+        "short_name": "Trenchcoat: Ukkin-Na - Midway Shaft Upper",
         "vgravmap": "BlackCoat",
         "access_rules": [
           "$canTeleport3",
@@ -181,8 +181,8 @@
       },
       // Power Node Fragment (Ukkin-Na middle)
       {
-        "name": "Power Node Fragment (Ukkin-Na middle)",
-        "short_name": "Power Node Fragment (Ukkin-Na =)",
+        "name": "Power node fragment (redcoatchamber): Ukkin-Na - Midway Shaft Lower",
+        "short_name": "Power node fragment (redcoatchamber): Ukkin-Na - Midway Shaft Lower",
         "access_rules": [
           "$canAirport2,highjump",
           "$canAirport2,$canDroneTeleport",
@@ -210,8 +210,8 @@
       },
       // Digital Paper (Ukkin-Na)
       {
-        "name": "Digital Paper (Ukkin-Na)",
-        "short_name": "Digital Paper (Ukkin-Na)",
+        "name": "Note (hiddenitem): Ukkin-Na - Past the Slugs",
+        "short_name": "Note (hiddenitem): Ukkin-Na - Past the Slugs",
         "access_rules": [
           "deadvision,$canAirport2,highjump,$canUseRemoteDrone",
           "deadvision,$canAirport2,$canDroneTeleport",
@@ -239,8 +239,8 @@
       },
       // Rusalka Tablet (Ukkin-Na bottom) (2 items)
       {
-        "name": "Rusalka Tablet (Ukkin-Na bottom) (2 items)",
-        "short_name": "Rusalka Tablet (Ukkin-Na v) (2 items)",
+        "name": "Ukkin-Na - Long Fall (2 items)",
+        "short_name": "Ukkin-Na - Long Fall (2 items)",
         "map_locations": [
           {
             "map": "sudra",
@@ -278,8 +278,8 @@
       },
       // Power Node Fragment (Ukkin-Na bottom)
       {
-        "name": "Power Node Fragment (Ukkin-Na bottom)",
-        "short_name": "Power Node Fragment (Ukkin-Na v)",
+        "name": "Power node fragment (entrancetomadness): Ukkin-Na - Secret Room Above Lower Save",
+        "short_name": "Power node fragment (entrancetomadness): Ukkin-Na - Secret Room Above Lower Save",
         "access_rules": [
           "$canTeleport2,highjump,$canGlitchGun1,$canShootLong",
           "$canTeleport2,$canDroneTeleport,$canGlitchGun1,$canShootLong",

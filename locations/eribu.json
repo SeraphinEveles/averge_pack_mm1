@@ -10,8 +10,8 @@
     "children": [
       // Health Node (Eribu top)
       {
-        "name": "Health Node (Eribu top)",
-        "short_name": "Health Node (Eribu ^)",
+        "name": "Health node (reflectorroom): Eribu - Left Tower",
+        "short_name": "Health node (reflectorroom): Eribu - Left Tower",
         "vgravmap": "HealthNode9",
         "access_rules": [
           "{$canGlitchBomb,$canUseRemoteDrone}",
@@ -42,8 +42,8 @@
       },
       // Nova
       {
-        "name": "Nova",
-        "short_name": "Nova",
+        "name": "Nova: Eribu - Right Tower",
+        "short_name": "Nova: Eribu - Right Tower",
         "vgravmap": "Nova",
         "access_rules": [
           "$canTeleport1",
@@ -72,8 +72,8 @@
       },
       // Power Node Fragment (IKKIBU-LABIRU)
       {
-        "name": "Power Node Fragment (IKKIBU-LABIRU)",
-        "short_name": "Power Node Fragment (IKKIBU-LABIRU)",
+        "name": "Power node fragment (room14c): Eribu - Upper Passcode Room (IKKIBU-LABIRU)",
+        "short_name": "Power node fragment (room14c): Eribu - Upper Passcode Room (IKKIBU-LABIRU)",
         "vgravmap": "PowerNodeFragment2",
         "access_rules": [
           "{spazer,excavate,grapple}",
@@ -112,8 +112,8 @@
       },
       // Multi-Disruptor
       {
-        "name": "Multi-Disruptor",
-        "short_name": "Multi-Disruptor",
+        "name": "Multi Disruptor: Eribu - Outside Upper Passcode Room",
+        "short_name": "Multi Disruptor: Eribu - Outside Upper Passcode Room",
         "vgravmap": "MultiDisruptor",
         "access_rules": [
           "$canAirport2,excavate",
@@ -144,8 +144,8 @@
       },
       // Flamethrower (DINGER-GISBAR)
       {
-        "name": "Flamethrower (DINGER-GISBAR)",
-        "short_name": "Flamethrower (DINGER-GISBAR)",
+        "name": "Flamethrower: Eribu - Primordial Cave Upper (DINGER-GISBAR)",
+        "short_name": "Flamethrower: Eribu - Primordial Cave Upper (DINGER-GISBAR)",
         "vgravmap": "FlameThrower",
         "access_rules": [
           "$canAirport3,$canDroneTeleport,passcodetool,highjump",
@@ -174,8 +174,8 @@
       },
       // Size Node (Eribu)
       {
-        "name": "Size Node (Eribu)",
-        "short_name": "Size Node (Eribu)",
+        "name": "Size node (room11): Eribu - Bubble Shrine",
+        "short_name": "Size node (room11): Eribu - Bubble Shrine",
         "vgravmap": "SizeNode1",
         "access_rules": [
           "$canAirport2",
@@ -205,8 +205,8 @@
       },
       // Note (Eribu)
       {
-        "name": "Note (Eribu)",
-        "short_name": "Note (Eribu)",
+        "name": "Note (room2f): Eribu - Wheelchair Room",
+        "short_name": "Note (room2f): Eribu - Wheelchair Room",
         "vgravmap": "Note2",
         "access_rules": [
           "$canTeleport1,$canDroneTeleport",
@@ -233,8 +233,8 @@
       },
       // Laser Drill
       {
-        "name": "Laser Drill",
-        "short_name": "Laser Drill",
+        "name": "Drill: Eribu - Xedur Reward",
+        "short_name": "Drill: Eribu - Xedur Reward",
         "vgravmap": "Drill",
         "access_rules": [
           "nova",
@@ -294,10 +294,10 @@
           }
         ]
       },
-      // Power Node (Eribu)
+      // Power Node (Eribu) - Post Xedur
       {
-        "name": "Power Node (Eribu)",
-        "short_name": "Power Node (Eribu)",
+        "name": "Power node (drillsecret): Eribu - Under Xedur",
+        "short_name": "Power node (drillsecret): Eribu - Under Xedur",
         "vgravmap": "PowerNode1",
         "access_rules": [
           "{nova}",                       // can see but can't get
@@ -330,8 +330,8 @@
       },
       // Health Node Fragment (Eribu top)
       {
-        "name": "Health Node Fragment (Eribu top)",
-        "short_name": "Health Node Fragment (Eribu ^)",
+        "name": "Health node fragment (room2b): Eribu - Primordial Cave Lower",
+        "short_name": "Health node fragment (room2b): Eribu - Primordial Cave Lower",
         "vgravmap": "HealthNodeFragment13",
         "access_rules": [
           "$canTeleport3",
@@ -360,8 +360,8 @@
       },
       // Axiom Disruptor
       {
-        "name": "Axiom Disruptor",
-        "short_name": "Axiom Disruptor",
+        "name": "Axiom Disruptor: Eribu - Starter Weapon",
+        "short_name": "Axiom Disruptor: Eribu - Starter Weapon",
         "vgravmap": "DataDisruptor",
         "access_rules": [ ],
         "map_locations": [
@@ -385,8 +385,8 @@
       },
       // Lightning Gun
       {
-        "name": "Lightning Gun",
-        "short_name": "Lightning Gun",
+        "name": "Lightning Gun: Eribu - Sentry Bot Tunnel",
+        "short_name": "Lightning Gun: Eribu - Sentry Bot Tunnel",
         "vgravmap": "LightningGun",
         "access_rules": [
           "$canAirport3,$canGlitchBomb",
@@ -415,8 +415,8 @@
       },
       // Orbital Discharge (DALKHU-SUBTUM)
       {
-        "name": "Orbital Discharge (DALKHU-SUBTUM)",
-        "short_name": "Orbital Discharge (DALKHU-SUBTUM)",
+        "name": "Orbital Discharge: Eribu - Lower Passcode Room (DALKHU-SUBTUM)",
+        "short_name": "Orbital Discharge: Eribu - Lower Passcode Room (DALKHU-SUBTUM)",
         "vgravmap": "WallTrace",
         "access_rules": [
           "$canAirport2,passcodetool,highjump",
@@ -445,8 +445,8 @@
       },
       // Health Node Fragment (Eribu bottom left)
       {
-        "name": "Health Node Fragment (Eribu bottom left)",
-        "short_name": "Health Node Fragment (Eribu <v)",
+        "name": "Health node fragment (secretchamber): Eribu - Outside Lower Passcode Room",
+        "short_name": "Health node fragment (secretchamber): Eribu - Outside Lower Passcode Room",
         "vgravmap": "HealthNodeFragment2",
         "access_rules": [
           "{laserdrill}",
@@ -481,8 +481,8 @@
       },
       // Power Node Fragment (Eribu bottom)
       {
-        "name": "Power Node Fragment (Eribu bottom)",
-        "short_name": "Power Node Fragment (Eribu v)",
+        "name": "Power node fragment (area5entrance): Eribu - Path to Indi Ceiling",
+        "short_name": "Power node fragment (area5entrance): Eribu - Path to Indi Ceiling",
         "vgravmap": "PowerNodeFragment16",
         "access_rules": [
           "$canAirport3,highjump",
@@ -511,8 +511,8 @@
       },
       // Health Node (Eribu bottom)
       {
-        "name": "Health Node (Eribu bottom)",
-        "short_name": "Health Node (Eribu v)",
+        "name": "Health node (room24): Eribu - Path to Absu",
+        "short_name": "Health node (room24): Eribu - Path to Absu",
         "vgravmap": "HealthNode1",
         "access_rules": [
           "excavate",
